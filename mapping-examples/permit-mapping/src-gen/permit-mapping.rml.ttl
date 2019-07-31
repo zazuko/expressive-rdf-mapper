@@ -1,0 +1,132 @@
+PREFIX rr: <http://www.w3.org/ns/r2rml#>
+PREFIX rml: <http://semweb.mmlab.be/ns/rml#>
+PREFIX ql: <http://semweb.mmlab.be/ns/ql#>
+PREFIX ex: <https://schema.example.org/>
+PREFIX schema: <https://schema.org/>
+
+<#Agency>
+	rml:logicalSource [
+		rml:source "t_agency" ;
+		rml:referenceFormulation rr:SQL2008
+	];
+	
+	rr:subjectMap [
+		rr:template "https://permits.example.org/agencies/{AGENCY_ID}";
+		rr:class schema:GovernmentOrganization ;
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate schema:name ;
+		rr:objectMap [
+			rml:reference "AGENCY_NAME_DE" ;
+			rr:language "de" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate schema:name ;
+		rr:objectMap [
+			rml:reference "AGENCY_NAME_FR" ;
+			rr:language "fr" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate schema:name ;
+		rr:objectMap [
+			rml:reference "AGENCY_NAME_EN" ;
+			rr:language "en" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate schema:name ;
+		rr:objectMap [
+			rml:reference "AGENCY_NAME_IT" ;
+			rr:language "it" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate schema:alternateName ;
+		rr:objectMap [
+			rml:reference "AGENCY_ABBREV_DE" ;
+			rr:language "de" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate schema:alternateName ;
+		rr:objectMap [
+			rml:reference "AGENCY_ABBREV_FR" ;
+			rr:language "fr" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate schema:alternateName ;
+		rr:objectMap [
+			rml:reference "AGENCY_ABBREV_EN" ;
+			rr:language "en" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate schema:alternateName ;
+		rr:objectMap [
+			rml:reference "AGENCY_ABBREV_IT" ;
+			rr:language "it" ;
+		];
+	]
+.
+<#Permit>
+	rml:logicalSource [
+		rml:source "t_permit" ;
+		rml:referenceFormulation rr:SQL2008
+	];
+	
+	rr:subjectMap [
+		rr:template "https://permits.example.org/permits/{PERMIT_ID}";
+		rr:class schema:GovernmentPermit ;
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate schema:description ;
+		rr:objectMap [
+			rml:reference "PERMIT_DESC_DE" ;
+			rr:language "de" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate schema:description ;
+		rr:objectMap [
+			rml:reference "PERMIT_DESC_FR" ;
+			rr:language "fr" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate schema:description ;
+		rr:objectMap [
+			rml:reference "PERMIT_DESC_EN" ;
+			rr:language "en" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate schema:description ;
+		rr:objectMap [
+			rml:reference "PERMIT_DESC_IT" ;
+			rr:language "it" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate ex:permitLevel ;
+		rr:objectMap [
+			rr:template "https://permits.example.org/permitlevels/{PERMIT_LEVEL}" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate ex:status ;
+		rr:objectMap [
+			rr:template "https://permits.example.org/statuses/{PERMIT_STATUS}" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate ex:agency ;
+		rr:objectMap [
+			rr:template "https://permits.example.org/agencies/{PERMIT_AGENCY_FK}" ;
+		];
+	]
+.

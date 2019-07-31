@@ -1,0 +1,12 @@
+// based on http://rml.io/spec.html#example-CSV
+
+map AirportMapping from airport {
+	subject template "http://airport.example.com/{0}" with id;
+	
+	types transit.Stop;
+	
+	properties
+		transit.route from stop with datatype xsd.int;
+		wgs84_pos.lat from latitude;
+		wgs84_pos.long from longitude;
+}

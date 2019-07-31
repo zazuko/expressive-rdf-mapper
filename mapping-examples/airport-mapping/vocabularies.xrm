@@ -1,0 +1,22 @@
+datatypes xsd {
+	prefix "xsd:" "http://www.w3.org/2001/XMLSchema#"
+	int
+}
+
+vocabulary transit {
+	prefix "transit:" "http://vocab.org/transit/terms/"
+		
+	classes
+		Stop
+	
+	properties
+		route
+}
+
+vocabulary wgs84_pos {
+	prefix "wgs84_pos:" "http://www.w3.org/2003/01/geo/wgs84_pos#"
+		
+	properties
+		lat
+		long
+}

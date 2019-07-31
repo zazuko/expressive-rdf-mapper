@@ -1,0 +1,36 @@
+source-types {
+    rdb referenceFormulation "rr:SQL2008"
+}
+
+source-group permits {
+	type rdb
+
+	logical-source t_agency {
+		source "t_agency"
+
+		referenceables
+			AGENCY_ID
+			AGENCY_NAME_DE
+			AGENCY_NAME_EN
+			AGENCY_NAME_FR
+			AGENCY_NAME_IT
+			AGENCY_ABBREV_DE
+			AGENCY_ABBREV_EN
+			AGENCY_ABBREV_FR
+			AGENCY_ABBREV_IT
+	}
+    
+	logical-source t_permit {
+		source "t_permit"
+    	
+		referenceables
+			PERMIT_ID
+			PERMIT_DESC_DE
+			PERMIT_DESC_EN
+			PERMIT_DESC_FR
+			PERMIT_DESC_IT
+			PERMIT_LEVEL
+			PERMIT_STATUS
+			PERMIT_AGENCY_FK
+	}
+}

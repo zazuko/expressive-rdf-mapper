@@ -1,0 +1,33 @@
+map Agency from permits.t_agency {
+	subject template "https://permits.example.org/agencies/{0}" with AGENCY_ID;
+	
+	types schema.GovernmentOrganization;
+	
+	properties
+		schema.name from AGENCY_NAME_DE with language-tag de;
+		schema.name from AGENCY_NAME_FR with language-tag fr;
+		schema.name from AGENCY_NAME_EN with language-tag en;
+		schema.name from AGENCY_NAME_IT with language-tag it;
+	    
+		schema.alternateName from AGENCY_ABBREV_DE with language-tag de;
+		schema.alternateName from AGENCY_ABBREV_FR with language-tag fr;
+		schema.alternateName from AGENCY_ABBREV_EN with language-tag en;
+		schema.alternateName from AGENCY_ABBREV_IT with language-tag it;
+}
+
+map Permit from permits.t_permit {
+	subject template "https://permits.example.org/permits/{0}" with PERMIT_ID;
+	
+	types schema.GovernmentPermit;
+	
+	properties
+		schema.description from PERMIT_DESC_DE with language-tag de;
+		schema.description from PERMIT_DESC_FR with language-tag fr;
+		schema.description from PERMIT_DESC_EN with language-tag en;
+		schema.description from PERMIT_DESC_IT with language-tag it;
+		
+		ex.permitLevel template "https://permits.example.org/permitlevels/{0}" with PERMIT_LEVEL;
+		ex.status template "https://permits.example.org/statuses/{0}" with PERMIT_STATUS;
+		
+		ex.agency link Agency with PERMIT_AGENCY_FK;
+}

@@ -1,0 +1,14 @@
+source-types {
+	csv referenceFormulation "ql:CSV"
+}
+
+logical-source airport {
+	type csv
+	source "http://www.example.com/Airport.csv"
+	
+	referenceables
+		id
+		stop
+		latitude
+		longitude
+}

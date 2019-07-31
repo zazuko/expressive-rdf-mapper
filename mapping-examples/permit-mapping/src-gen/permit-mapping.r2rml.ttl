@@ -1,0 +1,124 @@
+PREFIX rr: <http://www.w3.org/ns/r2rml#>
+PREFIX ex: <https://schema.example.org/>
+PREFIX schema: <https://schema.org/>
+
+<#Agency>
+	rr:logicalTable [ rr:tableName "t_agency" ];
+	
+	rr:subjectMap [
+		rr:template "https://permits.example.org/agencies/{AGENCY_ID}";
+		rr:class schema:GovernmentOrganization ;
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate schema:name ;
+		rr:objectMap [
+			rr:column "AGENCY_NAME_DE" ;
+			rr:language "de" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate schema:name ;
+		rr:objectMap [
+			rr:column "AGENCY_NAME_FR" ;
+			rr:language "fr" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate schema:name ;
+		rr:objectMap [
+			rr:column "AGENCY_NAME_EN" ;
+			rr:language "en" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate schema:name ;
+		rr:objectMap [
+			rr:column "AGENCY_NAME_IT" ;
+			rr:language "it" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate schema:alternateName ;
+		rr:objectMap [
+			rr:column "AGENCY_ABBREV_DE" ;
+			rr:language "de" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate schema:alternateName ;
+		rr:objectMap [
+			rr:column "AGENCY_ABBREV_FR" ;
+			rr:language "fr" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate schema:alternateName ;
+		rr:objectMap [
+			rr:column "AGENCY_ABBREV_EN" ;
+			rr:language "en" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate schema:alternateName ;
+		rr:objectMap [
+			rr:column "AGENCY_ABBREV_IT" ;
+			rr:language "it" ;
+		];
+	]
+.
+<#Permit>
+	rr:logicalTable [ rr:tableName "t_permit" ];
+	
+	rr:subjectMap [
+		rr:template "https://permits.example.org/permits/{PERMIT_ID}";
+		rr:class schema:GovernmentPermit ;
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate schema:description ;
+		rr:objectMap [
+			rr:column "PERMIT_DESC_DE" ;
+			rr:language "de" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate schema:description ;
+		rr:objectMap [
+			rr:column "PERMIT_DESC_FR" ;
+			rr:language "fr" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate schema:description ;
+		rr:objectMap [
+			rr:column "PERMIT_DESC_EN" ;
+			rr:language "en" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate schema:description ;
+		rr:objectMap [
+			rr:column "PERMIT_DESC_IT" ;
+			rr:language "it" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate ex:permitLevel ;
+		rr:objectMap [
+			rr:template "https://permits.example.org/permitlevels/{PERMIT_LEVEL}" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate ex:status ;
+		rr:objectMap [
+			rr:template "https://permits.example.org/statuses/{PERMIT_STATUS}" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate ex:agency ;
+		rr:objectMap [
+			rr:template "https://permits.example.org/agencies/{PERMIT_AGENCY_FK}" ;
+		];
+	]
+.
