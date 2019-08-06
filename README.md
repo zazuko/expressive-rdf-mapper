@@ -53,4 +53,4 @@ Once you installed the extension in Eclipse a good way to start is to start play
 
 Please report issues and feature requests on Github.
 
-Zazuko offers commercial support for this tool, get in [contact with us](mailto:info@zazuko.com?subject=RDF Mapping DSL) if you would like to know more.
+Zazuko offers commercial support for this tool, get in [contact with us](mailto:info@zazuko.com?subject=RDF%20Mapping%20DSL) if you would like to know more.
