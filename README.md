@@ -26,7 +26,13 @@ map AirportMapping from airport {
 ## Mapping examples
 
 For complete examples, have a look at the projects in the [mapping-examples](mapping-examples) folder.
+Once you installed the extension in Eclipse a good way to start is to start playing with them.
 
+1. Clone this repository.
+2. In Eclipse, click _File > Import_.
+3. In the Import wizard: Expand General and then click _Projects from Folder or Archive_ . Click Next . Click _Directory_ and select the cloned repository. Click Finish to add it to your Eclipse.
+4. Open one of the samples like `employee-mapping` and try to clone the current mapping.
+5. If everything was valid, you can find the generated R2RML file in the `src-gen` folder.
 
 ## Documentation
 
@@ -38,4 +44,4 @@ For complete examples, have a look at the projects in the [mapping-examples](map
 
 Please report issues and feature requests on Github.
 
-Pull requests are very welcome.
+Zazuko offers commercial support for this tool, get in [contact with us](mailto:info@zazuko.com?subject=RDF Mapping DSL) if you would like to know more.
