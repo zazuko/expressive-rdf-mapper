@@ -1,0 +1,23 @@
+PREFIX rr: <http://www.w3.org/ns/r2rml#>
+PREFIX rml: <http://semweb.mmlab.be/ns/rml#>
+PREFIX ql: <http://semweb.mmlab.be/ns/ql#>
+PREFIX ex: <http://example.com/ns#>
+
+<#TriplesMap1>
+	rml:logicalSource [
+		rml:source "EMP" ;
+		rml:referenceFormulation rr:SQL2008
+	];
+	
+	rr:subjectMap [
+		rr:template "http://data.example.com/employee/{EMPNO}";
+		rr:class ex:Employee ;
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate ex:name ;
+		rr:objectMap [
+			rml:reference "ENAME" ;
+		];
+	]
+.

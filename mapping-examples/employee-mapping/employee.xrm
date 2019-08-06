@@ -1,0 +1,35 @@
+// mapping to RDF from a database table
+map TriplesMap1 from EMPLOYEE {
+	subject template "http://data.example.com/employee/{0}" with EMPNO;
+	
+	types ex.Employee;
+	
+	properties
+		ex.name from ENAME;
+}
+
+// database: table and columns 
+logical-source EMPLOYEE {
+	type rdb
+	source "EMP"
+
+	referenceables
+		EMPNO
+		ENAME	
+}
+
+// rml:referenceFormulation for a relational database
+source-types {
+    rdb referenceFormulation "rr:SQL2008"
+}
+
+// vocabulary: classes and properties
+vocabulary ex {
+	prefix "ex:" "http://example.com/ns#"
+		
+	classes
+		Employee
+	
+	properties
+		name
+}
