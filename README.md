@@ -3,24 +3,33 @@
 Allows you to express data mappings to RDF in a friendly domain specific language (DSL) and generates output in [R2RML](http://www.w3.org/TR/r2rml/) and [RML](http://rml.io/).
 
 ```
-map AirportMapping from airport {
-  subject template "http://airport.example.com/{0}" with id;
-	
-  types transit.Stop;
-	
+map TriplesMap1 from EMPLOYEE {
+  subject template "http://data.example.com/employee/{0}" with EMPNO;
+  
+  types ex.Employee;
+  
   properties
-    transit.route from stop with datatype xsd.int;
-    wgs84_pos.lat from latitude;
-    wgs84_pos.long from longitude;
+    ex.name from ENAME;
 }
 ```
 
 *Note:* Language and generators are work-in-progress and subject to change in the future.
+Only a subset of R2RML and RML is supported. RDB and CSV support already works well in practice, whereas JSON and XML support is still missing some parts to be of practical use.
 
 
 ## Installation instructions
 
-**TODO:** 1) get eclipse  2) install DSL from update-site
+1) Download and install Eclipse: https://www.eclipse.org/downloads/packages/
+   * Recommended package: *Eclipse IDE for Java Developers*
+   * Hint: You need a [Java runtime environment (JRE)](https://wiki.eclipse.org/Eclipse/Installation#Install_a_JVM) to use Eclipse (Java SE 8 or greater).
+
+2) Start Eclipse and install the extension:
+   * Help > Install New Software
+   * Click `Add..` to add a new repository and fill in the following details:
+     * Name: *Zazuko RDF Mapping DSL Updates*
+     * Location: https://download.zazukoians.org/rdf-mapping-dsl/updates/
+   * Select *RDF Mapping DSL* from the list and click `Next>`
+   * Confirm the security warning about unsigned content by clicking on `Install anyway`
 
 
 ## Mapping examples
@@ -36,7 +45,7 @@ Once you installed the extension in Eclipse a good way to start is to start play
 
 ## Documentation
 
-* **TODO:** Link to blogpost (motivation)
+* **TODO:** Link - This blogpost mentions our motivation and some ideas around future development
 * [The Mapping Language](documentation/mapping-language.md) describes the elements of the language
 
 
