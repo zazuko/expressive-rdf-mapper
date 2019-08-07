@@ -130,7 +130,21 @@ The property value (the object of the triple):
 
 * can also be `with datatype` or `with languag-tag`
 * can be described as `template`
-* can be a `link` to another `map`. In this case, the `subject template` of the linked `map` is re-used.
+* can be a `link` to another `map`
+
+A `template` can have multiple variables:
+
+`subject template "http://venue.example.com/{0},{1}" with latitude longitude;`
+
+`link` is syntactic sugar of the DSL and not part of R2RML or RML. Using `link` eliminates the need for copy/pasting a template by re-using the `subject template` of the linked `map` instead. This makes refactorings easier.
+
+The following two object mappings are equivalent (taking into account the above `map AirportMapping` snippet):
+
+```
+properties
+        ex.agency link Agency with PERMIT_AGENCY_FK;
+//same: ex.agency template "https://permits.example.org/agencies/{0}" with PERMIT_AGENCY_FK;
+```
 
 There may be more than one `map` for one and the same `logical-source`.
 
