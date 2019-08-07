@@ -82,9 +82,57 @@ source-group permits {
 
 ### vocabulary
 
+A `vocabulary` lists `classes` and `properties` available for mapping.
+
+```
+vocabulary schema {
+	prefix "schema:" "https://schema.org/"
+	
+	classes	
+		GovernmentPermit
+		GovernmentOrganization
+	
+	properties
+		name
+		alternateName
+		description
+}
+```
+
+The following is an example for refering to the class *schema.GovernmentOrganization* in a `map`:
+
+`types schema.GovernmentOrganization;`
+
+
 ### datatypes
 
+`datatypes` available for mapping.
+
+```
+datatypes xsd {
+	prefix "xsd:" "http://www.w3.org/2001/XMLSchema#"
+	int
+}
+```
+
+The following is an example for refering to the datatype *xsd.int* in a `map`:
+
+`transit.route from stop with datatype xsd.int;`
+
+
 ### language-tags
+
+The `language-tags` available for mapping.
+
+```
+language-tags {
+	de en fr it
+}
+```
+
+The following is an example for refering to the language *en* in a `map`:
+
+`schema.name from AGENCY_NAME_EN with language-tag en;`
 
 
 ## Mapping
