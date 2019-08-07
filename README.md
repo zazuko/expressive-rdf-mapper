@@ -30,6 +30,7 @@ Only a subset of R2RML and RML is supported. RDB and CSV support already works w
      * Location: https://download.zazukoians.org/rdf-mapping-dsl/updates/
    * Select *RDF Mapping DSL* from the list and click `Next>`
    * Confirm the security warning about unsigned content by clicking on `Install anyway`
+     * If you receive an error message about the missing dependency "org.eclipse.xtext.xbase.lib 2.14.0", follow instructions on https://www.eclipse.org/Xtext/download.html to install the xtext plugin for Eclipse.
 
 
 ## Mapping examples
