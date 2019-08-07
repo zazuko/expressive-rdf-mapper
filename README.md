@@ -31,6 +31,10 @@ Only a subset of R2RML and RML is supported. RDB and CSV support already works w
    * Select *RDF Mapping DSL* from the list and click `Next>`
    * Confirm the security warning about unsigned content by clicking on `Install anyway`
 
+If you receive an error message about missing dependencies, then make sure that the option *"Contact all update sites during install to find required software"* is selected in the install dialog.
+
+If you try installing in an older version of Eclipse and receive an error message about missing dependency
+"org.eclipse.xtext.xbase.lib 2.14.0" or similar, then follow instructions on https://www.eclipse.org/Xtext/download.html to install the Xtext plugins for Eclipse manually, before installating the DSL extension. If that doesn't solve the problem, then please install the recommended Eclipse version mentioned in step 1).
 
 ## Mapping examples
 
