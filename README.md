@@ -49,7 +49,7 @@ Once you installed the extension in Eclipse a good way to start is to start play
 
 ## Documentation
 
-* **TODO:** Link - This blogpost mentions our motivation and some ideas around future development
+* The blogpost [RDF and Domain Specific Languages (DSL) - A Perfect Match](https://zazuko.com/blog/rdf-and-dsl-a-perfect-match) describes about motivation and some ideas for future developments
 * [The Mapping Language](documentation/mapping-language.md) describes the elements of the language
 
 
