@@ -1,4 +1,6 @@
 PREFIX rr: <http://www.w3.org/ns/r2rml#>
+PREFIX ex: <https://schema.example.org/>
+PREFIX schema: <https://schema.org/>
 PREFIX transit: <http://vocab.org/transit/terms/>
 PREFIX wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -29,5 +31,19 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 		rr:objectMap [
 			rr:column "longitude" ;
 		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate ex:owner ;
+		rr:objectMap [
+			rr:column "airport öwnership" ;
+		];
 	]
 .
+<#CityMapping>
+	rr:logicalTable [ rr:tableName "http://www.example.com/City.csv" ];
+	
+	rr:subjectMap [
+		rr:template "http://city.example.com/{continent}/{country}/{city}";
+		rr:class schema:City ;
+	];
+	

@@ -20,3 +20,22 @@ vocabulary wgs84_pos {
 		lat
 		long
 }
+
+vocabulary schema {
+	prefix "schema:" "https://schema.org/"
+	
+	classes
+		City
+	
+	properties
+
+}
+
+vocabulary ex {
+	prefix "ex:" "https://schema.example.org/"
+	
+	classes
+	
+	properties
+		owner
+}

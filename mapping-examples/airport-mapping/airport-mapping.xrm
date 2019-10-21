@@ -9,4 +9,11 @@ map AirportMapping from airport {
 		transit.route from stop with datatype xsd.int;
 		wgs84_pos.lat from latitude;
 		wgs84_pos.long from longitude;
+		ex.owner from ownership;
+}
+
+map CityMapping from city {
+	subject template "http://city.example.com/{0}/{1}/{2}" with continent country city;
+	
+	types schema.City;
 }

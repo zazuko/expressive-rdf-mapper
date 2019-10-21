@@ -11,4 +11,15 @@ logical-source airport {
 		stop
 		latitude
 		longitude
+		ownership "airport öwnership"
+}
+
+logical-source city {
+	type csv
+	source "http://www.example.com/City.csv"
+	
+	referenceables
+		continent
+		country
+		city
 }
