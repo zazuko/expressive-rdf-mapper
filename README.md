@@ -44,8 +44,8 @@ Once you installed the extension in Eclipse a good way to start is to start play
 1. Clone this repository.
 2. In Eclipse, click _File > Import_.
 3. In the Import wizard: Expand General and then click _Projects from Folder or Archive_ . Click Next . Click _Directory_ and select the cloned repository. Click Finish to add it to your Eclipse.
-4. Open one of the samples like `employee-mapping` and try to clone the current mapping.
-5. If everything was valid, you can find the generated R2RML file in the `src-gen` folder.
+4. Open one of the samples like `employee-mapping` and try to modify the current mapping.
+5. Xtext constantly watches the `.xrm` files in your Eclipse project and validates the syntax (ie. *on save*). When the syntax is valid, it automatically writes the R2RML files to `./src-gen`.
 
 ## Documentation
 
