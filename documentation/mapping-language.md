@@ -4,27 +4,16 @@
 
 The mapping language is the syntax used to describe a concrete mapping model. The model is stored in text files with the file extension `.xrm`. Files with other extensions are ignored by the tooling.
 
-The model can be in a single file or split over multiple files. Unless the model is very small, it generally makes sense to split the model at least into separate files for source/target/mapping.
+The model can be in a single file or split over multiple files. Unless the model is very small, it generally makes sense to split the model at least into three separate files for source, target and the mapping.
 
 The elements of the language belong either to the source, the target or the mapping in between.
 
 | source | target | mapping |
 | -------- | -------- | -------- |
-| `source-types`, `logical-source`, `source-group`     | `vocabulary`, `datatypes`, `language-tags`     | `map`     |
+| `logical-source`, `source-group`, `dialect`, `xml-namespace-extension`     | `vocabulary`, `language-tags`     | `output`, `map`, `template`     |
 
 
 ## Source
-
-### source-types
-
-`source-types` are the different types of data sources with their [referenceFormulation](http://rml.io/spec.html#referenceFormulation)
-
-```
-source-types {
-	rdb referenceFormulation "rr:SQL2008"
-	csv referenceFormulation "ql:CSV"
-}
-```
 
 
 ### logical-source
@@ -44,9 +33,19 @@ logical-source airport {
 }
 ```
 
-* `type`: the type of the data source, one of the defined `source-types`
+* `type`: the type of the data source: *rdb*, *csv* or *xml*
 * `source`: the data source to be mapped. For example a filename or tablename
 * `referenceables`: the referenceable elements within the data source. For example the columns of a table or CSV file
+
+
+When dealing with CSV files, sometimes a column that contains numbers will contain special values, such as "X", when a value is unknown. CSV on the Web (`csvw`) allows to specify values that are being used to indicate missing values. In the following example, the latitude column might usually be numeric but hold an "X" if there is no latitude value:
+
+```	
+	referenceables
+		id
+		latitude null "X"
+```
+
 
 A `logical-source` can stand on its own or be contained in a `source-group`
 
@@ -78,11 +77,57 @@ source-group permits {
 ```
 
 
+### dialect
+
+CSV on the Web (`csvw`) supports [dialect descriptions](https://www.w3.org/TR/2015/REC-tabular-metadata-20151217/#dialect-descriptions)   to provide hints to parsers about how to parse a CSV file.
+
+A complete dialect description looks as follows:
+
+```
+dialect MyCsvDialect {
+	delimiter ","
+	commentPrefix "#"
+	doubleQuote true
+	encoding "utf-8"
+	header true
+	headerRowCount 1
+	lineTerminators "\\r\\n"
+	quoteChar '\\"'
+	skipBlankRows false
+	skipColumns 0
+	skipInitialSpace false
+	skipRows 0
+	trim false
+}
+```
+
+Using dialects is optional and partial descriptions are possible as well:
+
+```
+dialect MyCsvDialect {
+	delimiter ";"
+}
+```
+
+In order to use a `dialect`, it has to be referenced from the respective `logical-source` or `source-group`:
+
+```
+logical-source airport {
+	type csv
+	source "http://www.example.com/Airport.csv"
+	dialect MyCsvDialect
+```
+
+
+### xml-namespace-extension
+TODO
+
+
 ## Target
 
 ### vocabulary
 
-A `vocabulary` lists `classes` and `properties` available for mapping.
+A `vocabulary` lists `classes`, `properties` and `datatypes` available for mapping.
 
 ```
 vocabulary schema {
@@ -96,6 +141,9 @@ vocabulary schema {
 		name
 		alternateName
 		description
+		
+	datatypes
+		Text
 }
 ```
 
@@ -104,29 +152,16 @@ The following is an example for refering to the class *schema.GovernmentOrganiza
 `types schema.GovernmentOrganization;`
 
 
-### datatypes
-
-`datatypes` available for mapping.
-
-```
-datatypes xsd {
-	prefix "xsd:" "http://www.w3.org/2001/XMLSchema#"
-	int
-}
-```
-
-The following is an example for refering to the datatype *xsd.int* in a `map`:
-
-`transit.route from stop with datatype xsd.int;`
-
-
 ### language-tags
 
 The `language-tags` available for mapping.
 
 ```
 language-tags {
-	de en fr it
+	de
+	en
+	fr
+	it
 }
 ```
 
@@ -136,6 +171,10 @@ The following is an example for refering to the language *en* in a `map`:
 
 
 ## Mapping
+
+### output
+
+TODO
 
 ### map
 
@@ -148,7 +187,7 @@ map AirportMapping from airport {
 	types transit.Stop;
 	
 	properties
-		transit.route from stop with datatype xsd.int;
+		transit.route from stop with datatype xsd.integer;
 		wgs84_pos.lat from latitude;
 		wgs84_pos.long from longitude;
 }
@@ -211,6 +250,10 @@ map Permit from permits.t_permit {
 
 There may be more than one `map` for one and the same `logical-source`.
 
+
+### template
+
+TODO
 
 ## Special stuff
 
