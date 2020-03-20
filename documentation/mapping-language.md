@@ -120,7 +120,25 @@ logical-source airport {
 
 
 ### xml-namespace-extension
-TODO
+
+When working with XML documents, it is often necessary to specify namespaces in order to identify a node's qualified name in XPath expressions. [CARML](https://github.com/carml/carml) includes a [XML namespace extension](https://github.com/carml/carml#xml-namespace-extension) to convey these namespaces to the processing engine.
+
+One or more namespaces are defined within a `xml-namespace-extension`. In order to use a `xml-namespace-extension`, it has to be referenced from the respective `logical-source` or `source-group`: 
+
+```
+xml-namespace-extension SomeXmlNsExtension {
+	prefix "exa" "http://www.example.com/audios/1.0/"
+	prefix "exb" "http://www.example.com/books/1.0/"
+}
+
+logical-source foo {
+	type xml
+	xml-namespace-extension SomeXmlNsExtension
+
+	...
+}
+```
+
 
 
 ## Target
