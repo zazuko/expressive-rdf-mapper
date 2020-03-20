@@ -1,14 +1,17 @@
 language-tags {
-	de en fr it
+	de
+	en
+	fr
+	it
 }
 
 vocabulary schema {
-	prefix "schema:" "https://schema.org/"
-	
-	classes	
+	prefix "schema" "https://schema.org/"
+
+	classes
 		GovernmentPermit
 		GovernmentOrganization
-	
+
 	properties
 		name
 		alternateName
@@ -16,12 +19,13 @@ vocabulary schema {
 }
 
 vocabulary ex {
-	prefix "ex:" "https://schema.example.org/"
-	
+	prefix "ex" "https://schema.example.org/"
+
 	classes
-	
+
 	properties
 		agency
 		permitLevel
 		status
 }
+

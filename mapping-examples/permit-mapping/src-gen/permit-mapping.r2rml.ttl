@@ -6,7 +6,7 @@ PREFIX schema: <https://schema.org/>
 	rr:logicalTable [ rr:tableName "t_agency" ];
 	
 	rr:subjectMap [
-		rr:template "https://permits.example.org/agencies/{AGENCY_ID}";
+		rr:template "https://permits.example.org/agencies/{AGENCY_ID}" ;
 		rr:class schema:GovernmentOrganization ;
 	];
 	
@@ -71,7 +71,7 @@ PREFIX schema: <https://schema.org/>
 	rr:logicalTable [ rr:tableName "t_permit" ];
 	
 	rr:subjectMap [
-		rr:template "https://permits.example.org/permits/{PERMIT_ID}";
+		rr:template "https://permits.example.org/permits/{PERMIT_ID}" ;
 		rr:class schema:GovernmentPermit ;
 	];
 	

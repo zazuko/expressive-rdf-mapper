@@ -14,7 +14,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 	];
 	
 	rr:subjectMap [
-		rr:template "http://airport.example.com/{id}";
+		rr:template "http://airport.example.com/{id}" ;
 		rr:class transit:Stop ;
 	];
 	
@@ -51,7 +51,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 	];
 	
 	rr:subjectMap [
-		rr:template "http://city.example.com/{continent}/{country}/{city}";
+		rr:template "http://city.example.com/{continent}/{country}/{city}" ;
 		rr:class schema:City ;
-	];
+	]
 	
+.
