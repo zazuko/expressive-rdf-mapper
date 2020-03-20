@@ -22,7 +22,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 		rr:predicate transit:route ;
 		rr:objectMap [
 			rml:reference "stop" ;
-			rr:datatype xsd:int ;
+			rr:datatype xsd:integer ;
 		];
 	];
 	rr:predicateObjectMap [
