@@ -37,6 +37,23 @@ logical-source airport {
 * `source`: the data source to be mapped. For example a filename or tablename
 * `referenceables`: the referenceable elements within the data source. For example the columns of a table or CSV file
 
+A `logical-source` can stand on its own or be contained in a `source-group`
+
+
+#### SQL query as source
+
+[R2RML views](https://www.w3.org/TR/r2rml/#r2rml-views) are useful in cases where differing mappings have to be applied, depending on conditions in the source data. Instead of a table name, the source is a SQL query: 
+
+```
+logical-source foo42 {
+  source query "SELECT * FROM foo WHERE res = 42"
+  ...
+}
+
+```
+
+
+#### Missing value indicators in CSV files
 
 When dealing with CSV files, sometimes a column that contains numbers will contain special values, such as "X", when a value is unknown. CSV on the Web (`csvw`) allows to specify values that are being used to indicate missing values. In the following example, the latitude column might usually be numeric but hold an "X" if there is no latitude value:
 
@@ -47,7 +64,7 @@ When dealing with CSV files, sometimes a column that contains numbers will conta
 ```
 
 
-A `logical-source` can stand on its own or be contained in a `source-group`
+
 
 
 ### source-group
