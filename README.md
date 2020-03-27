@@ -45,12 +45,13 @@ Once you installed the extension in Eclipse a good way to start is to start play
 2. In Eclipse, click _File > Import_.
 3. In the Import wizard: Expand General and then click _Projects from Folder or Archive_ . Click Next . Click _Directory_ and select the cloned repository. Click Finish to add it to your Eclipse.
 4. Open one of the samples like `employee-mapping` and try to modify the current mapping.
-5. Xtext constantly watches the `.xrm` files in your Eclipse project and validates the syntax (ie. *on save*). When the syntax is valid, it automatically writes the R2RML files to `./src-gen`.
+5. Xtext constantly watches the `.xrm` files in your Eclipse project and validates the syntax (ie. *on save*). When the syntax is valid, it automatically writes the generated mapping file(s) to `./src-gen`.
 
 ## Documentation
 
 * The blogpost [RDF and Domain Specific Languages (DSL) - A Perfect Match](https://zazuko.com/blog/rdf-and-dsl-a-perfect-match) describes our motivation and some ideas for future developments
 * [The Mapping Language](documentation/mapping-language.md) describes the elements of the language
+* [Frequently Asked Questions](FAQ.md)
 
 
 ## Support
