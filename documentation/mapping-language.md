@@ -184,7 +184,7 @@ vocabulary schema {
 
 The following is an example for refering to the class *schema.GovernmentOrganization* in a `map`:
 
-`types schema.GovernmentOrganization;`
+`types schema.GovernmentOrganization`
 
 
 ### language-tags
@@ -219,7 +219,7 @@ A `map` describes how to translate source data from one `logical-source` into RD
 map AirportMapping from airport {
 	subject template "http://airport.example.com/{0}" with id;
 	
-	types transit.Stop;
+	types transit.Stop
 	
 	properties
 		transit.route from stop with datatype xsd.integer;
@@ -230,9 +230,9 @@ map AirportMapping from airport {
 
 
 
-* `subject`: the subject IRI described as `template`
-* `types`: zero or more `classes` from a `vocabulary`
-* `properties`: zero or more `properties` from a `vocabulary` and the source for their value
+* `subject`: (mandatory) the subject IRI described as `template`
+* `types`: (optional) one or more `classes` from a `vocabulary`
+* `properties`: (optional) one or more `properties` from a `vocabulary` and the source for their value
 
 ```
 map Permit from permits.t_permit {
@@ -308,4 +308,5 @@ vocabulary ric {
 
 ### Semicolons
 
-Using semicolons in the `map` is optional but improves code-assist.
+Inside the `map` element, ending lines with a semicolon is mandatory for the subject IRI and for predicate object mappings.
+There is no line end for subject type mappings.
