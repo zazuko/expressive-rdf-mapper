@@ -166,7 +166,7 @@ A `vocabulary` lists `classes`, `properties` and `datatypes` available for mappi
 
 ```
 vocabulary schema {
-	prefix "schema:" "https://schema.org/"
+	prefix "schema" "https://schema.org/"
 	
 	classes	
 		GovernmentPermit
@@ -268,6 +268,7 @@ The property value (the object of the triple):
 * can also be `with datatype` or `with languag-tag`
 * can be described as `template`
 * can be a `constant` value
+* can be multiple terms, resulting from a `multi-reference` (see CARML [MultiTermMap extension](https://github.com/carml/carml#multitermmap-extension) )
 
 #### map: template
 
@@ -329,7 +330,7 @@ Naming rules for the identifiers are strict and certain characters are not allow
 
 ```
 vocabulary ric {
-	prefix "ric:" "http://www.ica.org/standards/RiC/ontology#"
+	prefix "ric" "http://www.ica.org/standards/RiC/ontology#"
     	
 	properties
 		title
