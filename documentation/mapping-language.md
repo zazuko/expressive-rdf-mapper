@@ -244,6 +244,8 @@ map Permit from permits.t_permit {
 
 		ex.status template "https://permits.example.org/statuses/{0}" with PERMIT_STATUS;
 		
+		ex.foo constant "bar";
+		
 		ex.agency link Agency with PERMIT_AGENCY_FK;
 }
 ```
@@ -252,6 +254,7 @@ The property value (the object of the triple):
 
 * can also be `with datatype` or `with languag-tag`
 * can be described as `template`
+* can be a `constant` value
 * can be a `link` to another `map`
 
 #### map: template
