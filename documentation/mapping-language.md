@@ -276,6 +276,14 @@ A `template` can have multiple variables:
 `subject template "http://venue.example.com/{0},{1}" with latitude longitude;`
 
 
+[By default](https://www.w3.org/TR/r2rml/#from-template), `template` generates IRIs. If a literal is to be created instead, then the term type has to be set explicitly:
+
+```
+properties
+		ex.foobaz template "{0}-{1}" with FOO BAZ as Literal;
+```
+
+
 #### map: other hints
 
 There may be more than one `map` for one and the same `logical-source`.
