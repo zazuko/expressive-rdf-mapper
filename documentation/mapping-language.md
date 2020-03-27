@@ -338,6 +338,30 @@ vocabulary ric {
 }
 ```
 
+
+### Escaping keywords
+
+Identifiers that conflict with keywords of the mapping language need to be escaped with the `^` character. 
+
+The following example shows how *map* is escaped and used as an identifier:
+
+```
+map FooMapping from foo {
+	subject template "http://foo.example.com/{0}" with id;
+
+	properties
+		ex.^map from bar;
+}
+
+vocabulary ex {
+	prefix "ex" "http://example.org/"
+
+	properties
+		^map
+}
+```
+
+
 ### Semicolons
 
 Inside the `map` element, ending lines with a semicolon is mandatory for the subject IRI and for predicate object mappings.
