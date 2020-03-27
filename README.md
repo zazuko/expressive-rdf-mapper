@@ -1,20 +1,20 @@
 # A friendly language for mappings to RDF
 
-Allows you to express data mappings to RDF in a friendly domain specific language (DSL) and generates output in [R2RML](http://www.w3.org/TR/r2rml/) and [RML](http://rml.io/).
+Allows you to express data mappings to RDF in a friendly domain specific language (DSL) and generates output in
+[R2RML](http://www.w3.org/TR/r2rml/), [RML](http://rml.io/), [CARML](https://github.com/carml/carml) and [CSV on the Web](https://w3c.github.io/csvw/primer/) format.
 
 ```
+output r2rml
+
 map TriplesMap1 from EMPLOYEE {
   subject template "http://data.example.com/employee/{0}" with EMPNO;
   
-  types ex.Employee;
+  types ex.Employee
   
   properties
     ex.name from ENAME;
 }
 ```
-
-*Note:* Language and generators are work-in-progress and subject to change in the future.
-Only a subset of R2RML and RML is supported. RDB and CSV support already works well in practice, whereas JSON and XML support is still missing some parts to be of practical use.
 
 
 ## Installation instructions

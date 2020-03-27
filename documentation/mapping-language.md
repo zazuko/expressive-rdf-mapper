@@ -209,7 +209,22 @@ The following is an example for refering to the language *en* in a `map`:
 
 ### output
 
-TODO
+The `output` header is used to choose the format of the generated mapping file.
+
+The supported output formats are:
+
+* `r2rml`: [R2RML](http://www.w3.org/TR/r2rml/)
+* `rml`: [RML](http://rml.io/)
+* `carml`: [CARML](https://github.com/carml/carml)
+* `csvw`: [CSV on the Web](https://w3c.github.io/csvw/primer/)
+
+```
+output r2rml
+
+map AirportMapping from airport {
+	subject template "http://airport.example.com/{0}" with id;
+}
+```
 
 ### map
 
@@ -272,8 +287,6 @@ A `template` can be declared on the top-level, outside of a `map`, and subsequen
 Doing so avoids repetition of IRI templates when multiple mappings involve the same resource.
 
 ```
-output rml
-
 template airportIri "http://airport.example.com/{0}"
 template airlineIri "http://airline.example.com/{0}"
 
