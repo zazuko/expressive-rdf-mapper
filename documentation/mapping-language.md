@@ -245,8 +245,6 @@ map Permit from permits.t_permit {
 		ex.status template "https://permits.example.org/statuses/{0}" with PERMIT_STATUS;
 		
 		ex.foo constant "bar";
-		
-		ex.agency link Agency with PERMIT_AGENCY_FK;
 }
 ```
 
@@ -255,7 +253,6 @@ The property value (the object of the triple):
 * can also be `with datatype` or `with languag-tag`
 * can be described as `template`
 * can be a `constant` value
-* can be a `link` to another `map`
 
 #### map: template
 
@@ -263,26 +260,6 @@ A `template` can have multiple variables:
 
 `subject template "http://venue.example.com/{0},{1}" with latitude longitude;`
 
-#### map: link
-
-`link` is syntactic sugar of the DSL and not part of R2RML or RML. Using `link` eliminates the need for copy/pasting a template by re-using the `subject template` of the linked `map` instead. This makes refactorings easier.
-
-The following example shows how `link` works. The two object mappings for `ex.agency` are equivalent (Note: for the sake of brevity, parts of the mapping are omitted):
-
-```
-map Agency from permits.t_agency {
-    subject template "https://permits.example.org/agencies/{0}" with AGENCY_ID;
-    ...
-}
-
-map Permit from permits.t_permit {
-    ...
-
-    properties
-        ex.agency link Agency with PERMIT_AGENCY_FK;
-//same: ex.agency template "https://permits.example.org/agencies/{0}" with PERMIT_AGENCY_FK;
-}
-```
 
 #### map: other hints
 
@@ -291,7 +268,37 @@ There may be more than one `map` for one and the same `logical-source`.
 
 ### template
 
-TODO
+A `template` can be declared on the top-level, outside of a `map`, and subsequently be referred to from multiple mappings.
+Doing so avoids repetition of IRI templates when multiple mappings involve the same resource.
+
+```
+output rml
+
+template airportIri "http://airport.example.com/{0}"
+template airlineIri "http://airline.example.com/{0}"
+
+map AirportMapping from airport {
+	subject template airportIri with id;
+
+	properties
+		wgs84_pos.lat from latitude;
+		wgs84_pos.long from longitude;
+}
+
+map AirportOwnership from airportowners {
+	subject template airportIri with id;
+
+	properties
+		ex.owner from ownership;
+}
+
+map AirlineAtAirport from airlineairport {
+	subject template airlineIri with id;
+
+	properties
+		ex.airportServed template airportIri with airportId;
+}
+```
 
 ## Special stuff
 
