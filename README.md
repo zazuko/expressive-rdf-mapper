@@ -54,8 +54,10 @@ Once you installed the extension in Eclipse a good way to start is to start play
 * [Frequently Asked Questions](FAQ.md)
 
 
-## Support
+## License and Support
+
+The included [End-User License Agreement](EULA.md) covers personal, non-commercial use.
+
+For commercial use, including commercial support, please get in [contact with us](mailto:info@zazuko.com?subject=RDF%20Mapping%20DSL) 
 
 Please report issues and feature requests on Github.
-
-Zazuko offers commercial support for this tool, get in [contact with us](mailto:info@zazuko.com?subject=RDF%20Mapping%20DSL) if you would like to know more.
