@@ -214,7 +214,7 @@ The `output` header is used to choose the format of the generated mapping file.
 The supported output formats are:
 
 * `r2rml`: [R2RML](http://www.w3.org/TR/r2rml/)
-* `rml`: [RML](http://rml.io/)
+* `rml`: [RML](https://rml.io/specs/rml/)
 * `carml`: [CARML](https://github.com/carml/carml)
 * `csvw`: [CSV on the Web](https://w3c.github.io/csvw/primer/)
 

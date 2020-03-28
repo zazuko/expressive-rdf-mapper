@@ -1,7 +1,7 @@
 # A friendly language for mappings to RDF
 
 Allows you to express data mappings to RDF in a friendly domain specific language (DSL) and generates output in
-[R2RML](http://www.w3.org/TR/r2rml/), [RML](http://rml.io/), [CARML](https://github.com/carml/carml) and [CSV on the Web](https://w3c.github.io/csvw/primer/) format.
+[R2RML](http://www.w3.org/TR/r2rml/), [RML](https://rml.io/specs/rml/), [CARML](https://github.com/carml/carml) and [CSV on the Web](https://w3c.github.io/csvw/primer/) format.
 
 ```
 output r2rml
