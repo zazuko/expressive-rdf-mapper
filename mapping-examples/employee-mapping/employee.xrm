@@ -1,9 +1,12 @@
 // mapping to RDF from a database table
+output r2rml
+
 map TriplesMap1 from EMPLOYEE {
 	subject template "http://data.example.com/employee/{0}" with EMPNO;
-	
-	types ex.Employee;
-	
+
+	types
+		ex.Employee
+
 	properties
 		ex.name from ENAME;
 }
@@ -15,21 +18,17 @@ logical-source EMPLOYEE {
 
 	referenceables
 		EMPNO
-		ENAME	
-}
-
-// rml:referenceFormulation for a relational database
-source-types {
-    rdb referenceFormulation "rr:SQL2008"
+		ENAME
 }
 
 // vocabulary: classes and properties
 vocabulary ex {
-	prefix "ex:" "http://example.com/ns#"
-		
+	prefix "ex" "http://example.com/ns#"
+
 	classes
 		Employee
-	
+
 	properties
 		name
 }
+

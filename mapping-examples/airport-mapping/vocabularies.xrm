@@ -1,41 +1,43 @@
-datatypes xsd {
-	prefix "xsd:" "http://www.w3.org/2001/XMLSchema#"
-	int
+vocabulary xsd {
+	prefix "xsd" "http://www.w3.org/2001/XMLSchema#"
+
+	datatypes
+		integer
 }
 
 vocabulary transit {
-	prefix "transit:" "http://vocab.org/transit/terms/"
-		
+	prefix "transit" "http://vocab.org/transit/terms/"
+
 	classes
 		Stop
-	
+
 	properties
 		route
 }
 
 vocabulary wgs84_pos {
-	prefix "wgs84_pos:" "http://www.w3.org/2003/01/geo/wgs84_pos#"
-		
+	prefix "wgs84_pos" "http://www.w3.org/2003/01/geo/wgs84_pos#"
+
 	properties
 		lat
 		long
 }
 
 vocabulary schema {
-	prefix "schema:" "https://schema.org/"
-	
+	prefix "schema" "https://schema.org/"
+
 	classes
 		City
-	
-	properties
 
+		properties
 }
 
 vocabulary ex {
-	prefix "ex:" "https://schema.example.org/"
-	
+	prefix "ex" "https://schema.example.org/"
+
 	classes
-	
+
 	properties
 		owner
 }
+

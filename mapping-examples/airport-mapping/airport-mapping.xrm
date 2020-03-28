@@ -1,12 +1,14 @@
 // based on http://rml.io/spec.html#example-CSV
+output rml
 
 map AirportMapping from airport {
 	subject template "http://airport.example.com/{0}" with id;
-	
-	types transit.Stop;
-	
+
+	types
+		transit.Stop
+
 	properties
-		transit.route from stop with datatype xsd.int;
+		transit.route from stop with datatype xsd.integer;
 		wgs84_pos.lat from latitude;
 		wgs84_pos.long from longitude;
 		ex.owner from ownership;
@@ -14,6 +16,7 @@ map AirportMapping from airport {
 
 map CityMapping from city {
 	subject template "http://city.example.com/{0}/{1}/{2}" with continent country city;
-	
-	types schema.City;
+
+	types
+		schema.City
 }

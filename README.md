@@ -1,20 +1,20 @@
 # A friendly language for mappings to RDF
 
-Allows you to express data mappings to RDF in a friendly domain specific language (DSL) and generates output in [R2RML](http://www.w3.org/TR/r2rml/) and [RML](http://rml.io/).
+Allows you to express data mappings to RDF in a friendly domain specific language (DSL) and generates output in
+[R2RML](http://www.w3.org/TR/r2rml/), [RML](https://rml.io/specs/rml/), [CARML](https://github.com/carml/carml) and [CSV on the Web](https://w3c.github.io/csvw/primer/) format.
 
 ```
+output r2rml
+
 map TriplesMap1 from EMPLOYEE {
   subject template "http://data.example.com/employee/{0}" with EMPNO;
   
-  types ex.Employee;
+  types ex.Employee
   
   properties
     ex.name from ENAME;
 }
 ```
-
-*Note:* Language and generators are work-in-progress and subject to change in the future.
-Only a subset of R2RML and RML is supported. RDB and CSV support already works well in practice, whereas JSON and XML support is still missing some parts to be of practical use.
 
 
 ## Installation instructions
@@ -45,16 +45,19 @@ Once you installed the extension in Eclipse a good way to start is to start play
 2. In Eclipse, click _File > Import_.
 3. In the Import wizard: Expand General and then click _Projects from Folder or Archive_ . Click Next . Click _Directory_ and select the cloned repository. Click Finish to add it to your Eclipse.
 4. Open one of the samples like `employee-mapping` and try to modify the current mapping.
-5. Xtext constantly watches the `.xrm` files in your Eclipse project and validates the syntax (ie. *on save*). When the syntax is valid, it automatically writes the R2RML files to `./src-gen`.
+5. Xtext constantly watches the `.xrm` files in your Eclipse project and validates the syntax (ie. *on save*). When the syntax is valid, it automatically writes the generated mapping file(s) to `./src-gen`.
 
 ## Documentation
 
 * The blogpost [RDF and Domain Specific Languages (DSL) - A Perfect Match](https://zazuko.com/blog/rdf-and-dsl-a-perfect-match) describes our motivation and some ideas for future developments
 * [The Mapping Language](documentation/mapping-language.md) describes the elements of the language
+* [Frequently Asked Questions](FAQ.md)
 
 
-## Support
+## License and Support
+
+The included [End-User License Agreement](EULA.md) covers personal, non-commercial use.
+
+For commercial use, including commercial support, please get in [contact with us](mailto:info@zazuko.com?subject=RDF%20Mapping%20DSL) 
 
 Please report issues and feature requests on Github.
-
-Zazuko offers commercial support for this tool, get in [contact with us](mailto:info@zazuko.com?subject=RDF%20Mapping%20DSL) if you would like to know more.

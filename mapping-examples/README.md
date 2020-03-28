@@ -1,14 +1,21 @@
 # Mapping Examples
 
-The *src-gen* folder inside the projects contains the generated R2RML/RML mappings.
+The *src-gen* folder inside the projects contains the generated mapping file(s).
 
 ## airport-mapping
 
 * mapping data from a single CSV file
-* based on http://rml.io/spec.html#example-CSV
+* output RML
+* based on https://rml.io/specs/rml/#example-CSV
+
+
+## employee-mapping
+
+* mapping data from a single table of a relational database
+* output R2ML
 
 
 ## permit-mapping
 
 * mapping data from multiple tables of a relational database
-
+* output R2ML
