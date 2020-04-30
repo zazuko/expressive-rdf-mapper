@@ -36,6 +36,8 @@ We've tested the plugin with:
 
 ### Using Eclipse
 
+If you are installing the plugin into an existing Eclipse installation please make sure that it is a recent Eclipse release. The plugin does not work properly with older Eclipse releases. If you get errors during the installation process about unresolved dependencies, your Eclipse is most probably too old.
+
 1) Download and install Eclipse: https://www.eclipse.org/downloads/packages/
    * Recommended package: *Eclipse IDE for Java Developers*
    * Hint: You need a [Java runtime environment (JRE)](https://wiki.eclipse.org/Eclipse/Installation#Install_a_JVM) to use Eclipse (Java SE 8 or greater).
