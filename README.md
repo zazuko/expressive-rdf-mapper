@@ -36,8 +36,6 @@ We've tested the plugin with:
 
 ### Using Eclipse
 
-If you are installing the plugin into an existing Eclipse installation please make sure that it is a recent Eclipse release. The plugin does not work properly with older Eclipse releases. If you get errors during the installation process about unresolved dependencies, your Eclipse is most probably too old.
-
 1) Download and install Eclipse: https://www.eclipse.org/downloads/packages/
    * Recommended package: *Eclipse IDE for Java Developers*
    * Hint: You need a [Java runtime environment (JRE)](https://wiki.eclipse.org/Eclipse/Installation#Install_a_JVM) to use Eclipse (Java SE 8 or greater).
@@ -52,8 +50,9 @@ If you are installing the plugin into an existing Eclipse installation please ma
 
 If you receive an error message about missing dependencies, then make sure that the option *"Contact all update sites during install to find required software"* is selected in the install dialog.
 
+The plugin might not work properly with older Eclipse releases!
 If you try installing in an older version of Eclipse and receive an error message about missing dependency
-"org.eclipse.xtext.xbase.lib 2.14.0" or similar, then follow instructions on https://www.eclipse.org/Xtext/download.html to install the Xtext plugins for Eclipse manually, before installating the DSL extension. If that doesn't solve the problem, then please install the recommended Eclipse version mentioned in step 1).
+`org.eclipse.xtext.xbase.lib 2.14.0` or similar, then follow instructions on https://www.eclipse.org/Xtext/download.html to install the Xtext plugins for Eclipse manually, before installating the DSL extension. If that doesn't solve the problem, then please install the recommended Eclipse version mentioned in step 1).
 
 ### Using Visual Studio Code
 
