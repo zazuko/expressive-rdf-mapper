@@ -15,7 +15,10 @@ Auto ignore derived resources can be disabled in Eclipse preferences:
 1. _Window > Preferences_
 2. _Team > Git > Projects > [ ] Automatically ignore derived resources ..._
 
-
 ## Is there a code formatter for the mapping language?
 
 Yes. To format a file, open it and hit `Ctrl-Shift-F`
+
+## Is a government organization considered Non-Commercial use?
+
+Governmental or intergovernmental organizations are not covered by the Non-Commercial License. [Contact us](mailto:info@zazuko.com?subject=XRM) for assistance in identifying your license needs. 
