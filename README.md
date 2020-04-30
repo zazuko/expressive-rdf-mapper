@@ -64,6 +64,6 @@ Once you installed the extension in Eclipse a good way to start is to start play
 
 The included [End-User License Agreement](EULA.md) covers personal, non-commercial use.
 
-For commercial use, including commercial support, please get in [contact with us](mailto:info@zazuko.com?subject=RDF%20Mapping%20DSL) 
+For commercial use, including commercial support, consult our [product page](https://zazuko.com/products/expressive-rdf-mapper/) at zazuko.com for more details.
 
-Please report issues and feature requests on Github.
+Please report issues and feature requests on Github. If you have other questions please post a message in the [RDF.community discussion forum](https://discuss.rdf.community/).
