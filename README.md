@@ -69,10 +69,10 @@ Once you installed the extension in Eclipse a good way to start is to start play
 
 ## Documentation
 
-* The blogpost [RDF and Domain Specific Languages (DSL) - A Perfect Match](https://zazuko.com/blog/rdf-and-dsl-a-perfect-match) describes our motivation and some ideas for future developments
-* [The Mapping Language](documentation/mapping-language.md) describes the elements of the language
+* [The Mapping Language](documentation/mapping-language.md) describes the elements of the language.
 * [Frequently Asked Questions](FAQ.md)
-
+* Consult our [product page](https://zazuko.com/products/expressive-rdf-mapper/) for general information.
+* The blogpost [RDF and Domain Specific Languages (DSL) - A Perfect Match](https://zazuko.com/blog/rdf-and-dsl-a-perfect-match) describes our motivation and some ideas for future developments. Note that this was written for the first release of XRM, some of the ideas are already supported now.
 
 ## License and Support
 
