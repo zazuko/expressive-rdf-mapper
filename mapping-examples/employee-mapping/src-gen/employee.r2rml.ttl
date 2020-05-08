@@ -1,7 +1,7 @@
 PREFIX rr: <http://www.w3.org/ns/r2rml#>
 PREFIX ex: <http://example.com/ns#>
 
-<#TriplesMap1>
+<#Employee>
 	rr:logicalTable [ rr:tableName "EMP" ];
 	
 	rr:subjectMap [

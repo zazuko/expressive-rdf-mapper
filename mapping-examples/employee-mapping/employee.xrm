@@ -1,7 +1,7 @@
 // mapping to RDF from a database table
 output r2rml
 
-map TriplesMap1 from EMPLOYEE {
+map Employee from EMPLOYEE {
 	subject template "http://data.example.com/employee/{0}" with EMPNO;
 
 	types
