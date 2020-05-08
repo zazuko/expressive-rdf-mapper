@@ -1,4 +1,4 @@
-# Expressive RDF Mapper XRM
+# Expressive RDF Mapper (XRM)
 
 Expressive RDF Mapper (XRM) is an RDF mapping language for humans. It greatly facilitates the mapping of non-RDF resources to RDF.
 
@@ -12,7 +12,7 @@ Expressive RDF Mapper is a commercial product, see the [End-User License Agreeme
 ```
 output r2rml
 
-map TriplesMap1 from EMPLOYEE {
+map Employee from EMPLOYEE {
   subject template "http://data.example.com/employee/{0}" with EMPNO;
   
   types ex.Employee
@@ -43,9 +43,9 @@ We've tested the plugin with:
 2) Start Eclipse and install the extension:
    * Help > Install New Software
    * Click `Add..` to add a new repository and fill in the following details:
-     * Name: *Zazuko RDF Mapping DSL Updates*
+     * Name: *Expressive RDF Mapper (XRM) Updates*
      * Location: https://download.zazukoians.org/rdf-mapping-dsl/updates/
-   * Select *RDF Mapping DSL* from the list and click `Next>`
+   * Select *Expressive RDF Mapper (XRM)* from the list and click `Next>`
    * Confirm the security warning about unsigned content by clicking on `Install anyway`
 
 If you receive an error message about missing dependencies, then make sure that the option *"Contact all update sites during install to find required software"* is selected in the install dialog.

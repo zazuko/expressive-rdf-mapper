@@ -1,8 +1,8 @@
 # End-User License Agreement ("Agreement")
 
-Last updated: 2020-03-27
+Last updated: 2020-05-08
 
-Please read this End-User License Agreement ("Agreement") carefully before downloading or using RDF Mapping DSL ("Application").
+Please read this End-User License Agreement ("Agreement") carefully before downloading or using Expressive RDF Mapper XRM ("Application").
 
 By downloading or using the Application, you are agreeing to be bound by the terms and conditions of this Agreement.
 
