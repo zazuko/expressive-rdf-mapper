@@ -56,6 +56,13 @@ If you try installing in an older version of Eclipse and receive an error messag
 
 ### Using Visual Studio Code
 
+1. Download the extension: <https://zazuko-download.fra1.cdn.digitaloceanspaces.com/expressive-rdf-mapper/expressive-rdf-mapper-1.0.0.vsix>.
+1. Open Visual Studio Code and navigate to the "Extensions" (select View > Extensions from the menu).
+1. Top-right corner of the "Extensions" pane, use the `...` button and choose "Install from VSIX…".
+1. Select the `.vsix` file you downloaded, click *Install*.
+
+The extension will detect and handle `.xrm` mapping files.
+
 ## Mapping examples
 
 For complete examples, have a look at the projects in the [mapping-examples](mapping-examples) folder.
