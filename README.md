@@ -5,7 +5,7 @@ Expressive RDF Mapper (XRM) is an RDF mapping language for humans. It greatly fa
 XRM is available as an Eclipse and Visual Studio Code Plugin.
 
 Expressive RDF Mapper allows you to express data mappings to RDF in a friendly domain specific language (DSL) and generates output in
-[R2RML](http://www.w3.org/TR/r2rml/), [RML](https://rml.io/specs/rml/), [CARML](https://github.com/carml/carml) and [CSV on the Web](https://w3c.github.io/csvw/primer/) format. 
+[R2RML](http://www.w3.org/TR/r2rml/), [RML](https://rml.io/specs/rml/), [CARML](https://github.com/carml/carml) and [CSV on the Web](https://w3c.github.io/csvw/primer/) format.
 
 Expressive RDF Mapper is a commercial product, see the [End-User License Agreement](EULA.md) and our [product page](https://zazuko.com/products/expressive-rdf-mapper/) at zazuko.com for more details.
 
@@ -14,9 +14,9 @@ output r2rml
 
 map Employee from EMPLOYEE {
   subject template "http://data.example.com/employee/{0}" with EMPNO;
-  
+
   types ex.Employee
-  
+
   properties
     ex.name from ENAME;
 }
@@ -56,7 +56,7 @@ If you try installing in an older version of Eclipse and receive an error messag
 
 ### Using Visual Studio Code
 
-1. Download the extension: <https://zazuko-download.fra1.cdn.digitaloceanspaces.com/expressive-rdf-mapper/expressive-rdf-mapper-1.0.0.vsix>.
+1. Download the extension: <https://zazuko-download.fra1.cdn.digitaloceanspaces.com/expressive-rdf-mapper/expressive-rdf-mapper-1.1.0.vsix>.
 1. Open Visual Studio Code and navigate to the "Extensions" (select View > Extensions from the menu).
 1. Top-right corner of the "Extensions" pane, use the `...` button and choose "Install from VSIX…".
 1. Select the `.vsix` file you downloaded, click *Install*.
