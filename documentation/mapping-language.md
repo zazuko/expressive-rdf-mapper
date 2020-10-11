@@ -150,12 +150,14 @@ xml-namespace-extension SomeXmlNsExtension {
 
 logical-source foo {
 	type xml
+	source "http://example.org/example.xml"
 	xml-namespace-extension SomeXmlNsExtension
 
 	...
 }
 ```
 
+Note that `xml-namespace-extension` has to appear _after_ any `source` definition, it will yield an error otherwise.
 
 
 ## Target
