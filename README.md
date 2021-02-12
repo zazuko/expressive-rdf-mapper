@@ -74,7 +74,10 @@ Once you installed the extension in Eclipse a good way to start is to start play
 4. Open one of the samples like `employee-mapping` and try to modify the current mapping.
 5. Xtext constantly watches the `.xrm` files in your Eclipse project and validates the syntax (ie. *on save*). When the syntax is valid, it automatically writes the generated mapping file(s) to `./src-gen`.
 
-## Documentation
+## Tutorials & Documentation
+
+* Video Tutorial [Mapping non-RDF data to a graph: Hands-on](https://youtu.be/gl2qzXmJypw)
+* Template for creating automated [CSV to RDF pipelines](https://github.com/zazuko/xrm-csvw-workflow)
 
 * [The Mapping Language](documentation/mapping-language.md) describes the elements of the language.
 * [Frequently Asked Questions](FAQ.md)
