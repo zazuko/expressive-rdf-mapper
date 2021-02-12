@@ -39,6 +39,26 @@ logical-source airport {
 
 A `logical-source` can stand on its own or be contained in a `source-group`
 
+#### Escaping special chars
+
+In CSV we often find weird column headers with whitespace and/or special chars. XRM will show you errors on those lines so you will need to escape them. You can escape them by adding quotes around the string. To be able to reference it properly, you need to give a valid alias that will be used instead.
+
+```
+logical-source airport {
+	type csv
+	source "http://www.example.com/Airport.csv"
+	
+	referenceables
+		id
+		stop
+		latitude
+		longitude
+		specRow "Spec. Row"
+}
+```
+
+In this example the column name `Spec. Row` from the CSV is escaped and will be referenced using `specRow` instead.
+
 
 #### SQL query as source
 
