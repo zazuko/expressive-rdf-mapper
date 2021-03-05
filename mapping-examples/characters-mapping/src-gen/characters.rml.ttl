@@ -1,0 +1,37 @@
+PREFIX rr: <http://www.w3.org/ns/r2rml#>
+PREFIX rml: <http://semweb.mmlab.be/ns/rml#>
+PREFIX ql: <http://semweb.mmlab.be/ns/ql#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX schema: <http://schema.org/>
+
+<#character>
+	rml:logicalSource [
+		rml:source "characters.xml" ;
+		rml:referenceFormulation ql:XPath ;
+		rml:iterator "/characters/character" ;
+	];
+	
+	rr:subjectMap [
+		rr:template "http://example.org/character/{@id}" ;
+		rr:class schema:Person ;
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate schema:givenName ;
+		rr:objectMap [
+			rml:reference "firstname" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate schema:lastName ;
+		rr:objectMap [
+			rml:reference "lastname" ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate dbo:hairColor ;
+		rr:objectMap [
+			rml:reference "hair" ;
+		];
+	]
+.
