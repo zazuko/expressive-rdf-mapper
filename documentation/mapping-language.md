@@ -84,7 +84,21 @@ When dealing with CSV files, sometimes a column that contains numbers will conta
 ```
 
 
+In order to apply a `null` value for all columns in a table, it can also be declared on the `logical-source` or `source-group` level:
 
+```
+logical-source airport {
+	type csv
+	source "airport"
+	null "X"
+
+	referenceables
+		id
+		stop
+		latitude
+		longitude
+}
+```
 
 
 ### source-group
