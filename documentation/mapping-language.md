@@ -306,7 +306,10 @@ The property value (the object of the triple):
 * can also be `with datatype` or `with languag-tag`
 * can be described as `template`
 * can be a `constant` value
-* can be multiple terms, resulting from a `multi-reference` (see CARML [MultiTermMap extension](https://github.com/carml/carml#multitermmap-extension) )
+
+
+Note regarding the use of `multi-reference`: `multi-reference` was specifically added to support the CARML MultiTermMap extension in XRM. Be aware that this extension [got deprecated](https://github.com/carml/carml/issues/52#issuecomment-690999094) with CARML release v0.3.0 (2020-09-11). 
+
 
 #### map: template
 
