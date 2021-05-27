@@ -209,6 +209,22 @@ The following is an example for refering to the class *schema.GovernmentOrganiza
 `types schema.GovernmentOrganization`
 
 
+#### Aliasing elements that have special characters in their name
+
+Certain characters are not allowed in the identifier of `classes`, `properties` and `datatypes`. To handle these cases, add quotes around the name and prepend it with a valid alias for referencing the element inside XRM.
+
+```
+vocabulary ric {
+	prefix "ric" "http://www.ica.org/standards/RiC/ontology#"
+    	
+	properties
+		characteristicPhysical "characteristic-Physical"
+}
+```
+
+In this example the property `characteristic-Physical` is aliased and will be referenced using the identifier `characteristicPhysical` instead.
+
+
 ### language-tags
 
 The `language-tags` available for mapping.
@@ -348,17 +364,23 @@ map AirlineAtAirport from airlineairport {
 
 ### Handling invalid identifiers
 
-Naming rules for the identifiers are strict and certain characters are not allowed as part of the identifier. Therefore it's possible to define an additional string value next to the identifier of `referenceables`, `classes`, `properties` and `datatypes`. The identifier is always used for references inside the mapping model, but the generator will use the string value instead of the identifier.
+Aliasing elements that have special characters in their name.
+
+Certain characters are not allowed as part of the identifiers used in XRM. Aliasing is used to handle these cases, when `referenceables`, `classes`, `properties` or `datatypes` have special characters in their name that
+make them invalid identifiers in XRM. To resolve this, add quotes around the name and prepend it with a valid alias for referencing the element inside XRM.
+
+The alias identifier is used for references inside the XRM mapping. The generated output on the other hand contains the quoted string value instead of the alias.
 
 ```
 vocabulary ric {
 	prefix "ric" "http://www.ica.org/standards/RiC/ontology#"
     	
 	properties
-		title
 		characteristicPhysical "characteristic-Physical"
 }
 ```
+
+In this example the property `characteristic-Physical` is aliased and will be referenced using the identifier `characteristicPhysical` instead.
 
 
 ### Escaping keywords
