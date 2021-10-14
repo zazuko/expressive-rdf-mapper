@@ -63,6 +63,8 @@ If you try installing in an older version of Eclipse and receive an error messag
 
 The extension will detect and handle `.xrm` mapping files.
 
+Details of editor issues are shown in the problems view. Use `View > Problems (Ctrl-Shift-M)` to activate it.
+
 ## Mapping examples
 
 For complete examples, have a look at the projects in the [mapping-examples](mapping-examples) folder.
