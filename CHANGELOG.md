@@ -1,5 +1,15 @@
 # Changelog of rdf-mapping-dsl
 
+## next
+
+* Optional specification of target named graph
+* A class, property or datatype from a vocabulary can also be used as constant value
+* CSV mapping: Support declaring null value on table level (with CSVW output)
+* Validation errors for duplicated (ambiguous) names (source, vocabulary, map, etc.)
+* Explicit typing of generated (R2)RML mappings with `rr:TriplesMap` improves compatibility with more mapping processors
+* Show templates in code-assist also if template is declared in another file
+* Show descriptions from vocabularies in code-assist (only works in Eclipse runtime)
+* Fix: no doublequotes on a string constant containing an IRI
 
 ## Version 1.0.0
 
