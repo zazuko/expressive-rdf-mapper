@@ -286,6 +286,10 @@ A `map` describes how to translate source data from one `logical-source` into RD
 map AirportMapping from airport {
 	subject template "http://airport.example.com/{0}" with id;
 	
+	graphs
+		template "http://airport.example.com/graph/stop/{0}" with id;
+		constant "http://www.w3.org/ns/r2rml#defaultGraph";
+	
 	types transit.Stop
 	
 	properties
@@ -298,6 +302,7 @@ map AirportMapping from airport {
 
 
 * `subject`: (mandatory) the subject IRI described as `template`
+* `graphs`: (optional) one or more IRIs of the target [named graph](https://rml.io/specs/rml/#named-graph)
 * `types`: (optional) one or more `classes` from a `vocabulary`
 * `properties`: (optional) one or more `properties` from a `vocabulary` and the source for their value
 
@@ -317,9 +322,9 @@ map Permit from permits.t_permit {
 
 The property value (the object of the triple):
 
-* can also be `with datatype` or `with languag-tag`
-* can be described as `template`
-* can be a `constant` value
+* Can also be `with datatype` or `with languag-tag`
+* Can be described as `template`
+* Can be a `constant` value. Either a string or a `class`, `property` or `datatype` from a `vocabulary`
 
 
 Note regarding the use of `multi-reference`: `multi-reference` was specifically added to support the CARML MultiTermMap extension in XRM. Be aware that this extension [got deprecated](https://github.com/carml/carml/issues/52#issuecomment-690999094) with CARML release v0.3.0 (2020-09-11). 
@@ -336,7 +341,7 @@ A `template` can have multiple variables:
 
 ```
 properties
-		ex.foobaz template "{0}-{1}" with FOO BAZ as Literal;
+	ex.foobaz template "{0}-{1}" with FOO BAZ as Literal;
 ```
 
 
@@ -425,5 +430,5 @@ vocabulary ex {
 
 ### Semicolons
 
-Inside the `map` element, ending lines with a semicolon is mandatory for the subject IRI and for predicate object mappings.
+Inside the `map` element, ending lines with a semicolon is mandatory for the subject IRI, the named graph IRI and for the predicate object mappings.
 There is no line end for subject type mappings.
