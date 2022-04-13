@@ -10,6 +10,7 @@
 * Show templates in code-assist also if template is declared in another file
 * Show descriptions from vocabularies in code-assist (only works in Eclipse runtime)
 * Fix: no doublequotes on a string constant containing an IRI
+* Fix: syntax highlighting in vscode
 
 ## Version 1.0.0
 
