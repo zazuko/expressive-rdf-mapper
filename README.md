@@ -25,20 +25,18 @@ map Employee from EMPLOYEE {
 
 ## Installation instructions
 
-Expressive RDF Mapper is using Java, a Java runtime environment (JRE) is required to run the mapper in Eclipse or Visual Studio Code. We recommend [AdoptOpenJdk](https://adoptopenjdk.net/) for those who do not have a JRE installed yet. If you have a recent Oracle JDK or JRE installed, you should be good to go.
+Expressive RDF Mapper is using Java, a Java runtime environment (JRE) is required to run the mapper in Eclipse or Visual Studio Code. We recommend [Adoptium](https://adoptium.net/) for those who do not have a JRE installed yet.
 
 We've tested the plugin with:
 
-* OpenJDK 8 (LTS)
-* OpenJDK 11 (LTS)
-* OpenJDK 14 (Latest)
-* Java SE Development Kit 8
+* OpenJDK 11
+* OpenJDK 17
 
 ### Using Eclipse
 
-1) Download and install Eclipse: https://www.eclipse.org/downloads/packages/
+1) Download and install Eclipse "Eclipse IDE 2022-03" (or newer): https://www.eclipse.org/downloads/packages/
    * Recommended package: *Eclipse IDE for Java Developers*
-   * Hint: You need a [Java runtime environment (JRE)](https://wiki.eclipse.org/Eclipse/Installation#Install_a_JVM) to use Eclipse (Java SE 8 or greater).
+   * Hint: The Eclipse Installer now also includes a JRE. A Java 11 or newer JRE/JDK is required.
 
 2) Start Eclipse and install the extension:
    * Help > Install New Software
@@ -50,13 +48,11 @@ We've tested the plugin with:
 
 If you receive an error message about missing dependencies, then make sure that the option *"Contact all update sites during install to find required software"* is selected in the install dialog.
 
-The plugin might not work properly with older Eclipse releases!
-If you try installing in an older version of Eclipse and receive an error message about missing dependency
-`org.eclipse.xtext.xbase.lib 2.14.0` or similar, then follow instructions on https://www.eclipse.org/Xtext/download.html to install the Xtext plugins for Eclipse manually, before installating the DSL extension. If that doesn't solve the problem, then please install the recommended Eclipse version mentioned in step 1).
+The plugin will not work properly with older Eclipse releases! Please install the recommended Eclipse version mentioned in step 1).
 
 ### Using Visual Studio Code
 
-1. Download the extension: <https://zazuko-download.fra1.cdn.digitaloceanspaces.com/expressive-rdf-mapper/expressive-rdf-mapper-1.1.0.vsix>.
+1. Download the extension: <https://zazuko-download.fra1.cdn.digitaloceanspaces.com/expressive-rdf-mapper/expressive-rdf-mapper-1.2.0.vsix>.
 1. Open Visual Studio Code and navigate to the "Extensions" (select View > Extensions from the menu).
 1. Top-right corner of the "Extensions" pane, use the `...` button and choose "Install from VSIX…".
 1. Select the `.vsix` file you downloaded, click *Install*.
