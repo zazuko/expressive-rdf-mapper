@@ -1,6 +1,6 @@
 # Changelog of rdf-mapping-dsl
 
-## next
+## Version 1.2.0
 
 * Optional specification of target named graph
 * A class, property or datatype from a vocabulary can also be used as constant value
@@ -11,6 +11,10 @@
 * Show descriptions from vocabularies in code-assist (only works in Eclipse runtime)
 * Fix: no doublequotes on a string constant containing an IRI
 * Fix: syntax highlighting in vscode
+* Fix: improved code-assist in vscode
+* Lifecycle: Requires Java 11 or newer
+* Lifecycle: Upgrade to xtext 2.26. This includes support for running on Java 17
+
 
 ## Version 1.0.0
 
