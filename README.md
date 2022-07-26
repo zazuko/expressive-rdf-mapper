@@ -44,7 +44,7 @@ We've tested the plugin with:
      * Name: *Expressive RDF Mapper (XRM) Updates*
      * Location: https://download.zazukoians.org/rdf-mapping-dsl/updates/
    * Select *Expressive RDF Mapper (XRM)* from the list and click `Next>`
-   * Confirm the security warning about unsigned content by clicking on `Install anyway`
+   * Confirm the security warning about unsigned content by selecting the "com.zazuko.rdfmapping.dsl" bundles and features and clicking on `Trust Selected`
 
 If you receive an error message about missing dependencies, then make sure that the option *"Contact all update sites during install to find required software"* is selected in the install dialog.
 
