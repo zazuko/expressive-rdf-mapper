@@ -12,6 +12,7 @@
 * Fix: no doublequotes on a string constant containing an IRI
 * Fix: syntax highlighting in vscode
 * Fix: improved code-assist in vscode
+* Fix: stricter syntax compliance of generated turtle files
 * Lifecycle: Requires Java 11 or newer
 * Lifecycle: Upgrade to xtext 2.26. This includes support for running on Java 17
 
