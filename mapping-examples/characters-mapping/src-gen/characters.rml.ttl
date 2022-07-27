@@ -5,33 +5,37 @@ PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX schema: <http://schema.org/>
 
 <#character>
+	a rr:TriplesMap;
+	
 	rml:logicalSource [
-		rml:source "characters.xml" ;
-		rml:referenceFormulation ql:XPath ;
-		rml:iterator "/characters/character" ;
+		rml:source "characters.xml";
+		rml:referenceFormulation ql:XPath;
+		rml:iterator "/characters/character"
 	];
 	
 	rr:subjectMap [
-		rr:template "http://example.org/character/{@id}" ;
-		rr:class schema:Person ;
+		rr:template "http://example.org/character/{@id}";
+		rr:class schema:Person
 	];
 	
 	rr:predicateObjectMap [
-		rr:predicate schema:givenName ;
+		rr:predicate schema:givenName;
 		rr:objectMap [
-			rml:reference "firstname" ;
-		];
+			rml:reference "firstname"
+		]
 	];
+	
 	rr:predicateObjectMap [
-		rr:predicate schema:lastName ;
+		rr:predicate schema:lastName;
 		rr:objectMap [
-			rml:reference "lastname" ;
-		];
+			rml:reference "lastname"
+		]
 	];
+	
 	rr:predicateObjectMap [
-		rr:predicate dbo:hairColor ;
+		rr:predicate dbo:hairColor;
 		rr:objectMap [
-			rml:reference "hair" ;
-		];
-	]
-.
+			rml:reference "hair"
+		]
+	].
+	

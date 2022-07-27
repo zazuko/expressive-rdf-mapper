@@ -10,7 +10,7 @@ map character from characters {
 	properties
 		schema.givenName from firstname;
 		schema.lastName from lastname;
-		schema.hairColor from hair;
+		dbo.hairColor from hair;
 }
 
 // XML: properties & XPath 
@@ -40,7 +40,7 @@ vocabulary schema {
 		lastName
 }
 
-vocabulary schema {
+vocabulary dbo {
 	prefix "dbo" "http://dbpedia.org/ontology/"
 
 	properties

@@ -1,5 +1,21 @@
 # Changelog of rdf-mapping-dsl
 
+## Version 1.2.0
+
+* Optional specification of target named graph
+* A class, property or datatype from a vocabulary can also be used as constant value
+* CSV mapping: Support declaring null value on table level (with CSVW output)
+* Validation errors for duplicated (ambiguous) names (source, vocabulary, map, etc.)
+* Explicit typing of generated (R2)RML mappings with `rr:TriplesMap` improves compatibility with more mapping processors
+* Show templates in code-assist also if template is declared in another file
+* Show descriptions from vocabularies in code-assist (only works in Eclipse runtime)
+* Fix: no doublequotes on a string constant containing an IRI
+* Fix: syntax highlighting in vscode
+* Fix: improved code-assist in vscode
+* Fix: stricter syntax compliance of generated turtle files
+* Lifecycle: Requires Java 11 or newer
+* Lifecycle: Upgrade to xtext 2.26. This includes support for running on Java 17
+
 
 ## Version 1.0.0
 
