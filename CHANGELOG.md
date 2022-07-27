@@ -1,4 +1,4 @@
-# Changelog of rdf-mapping-dsl
+# Changelog of Expressive RDF Mapper (XRM)
 
 ## Version 1.2.0
 
