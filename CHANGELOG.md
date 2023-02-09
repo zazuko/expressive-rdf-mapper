@@ -1,6 +1,11 @@
 # Changelog of Expressive RDF Mapper (XRM)
 
-## Version 1.2.0
+## Version 1.3.0 (2023-02-09)
+
+* JSON mapping: Support `ql:JSONPath` in (CA)RML output
+
+
+## Version 1.2.0 (2022-07-13)
 
 * Optional specification of target named graph
 * A class, property or datatype from a vocabulary can also be used as constant value
@@ -17,7 +22,7 @@
 * Lifecycle: Upgrade to xtext 2.26. This includes support for running on Java 17
 
 
-## Version 1.0.0
+## Version 1.0.0 (2020-05-08)
 
 * CSV mapping: Generate CSV on the Web (CSVW) output
 * XML mapping: Support CARML extensions (`carml:Stream`, `carml:multiReference`, `carml:declaresNamespace`)
@@ -33,7 +38,7 @@
 * Template re-use possibility replaces `link`
 
 
-## Version 0.9.0
+## Version 0.9.0 (2019-08-05)
 
 * The first public version
 * Support for R2RML and RML output

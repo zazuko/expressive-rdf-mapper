@@ -33,7 +33,7 @@ logical-source airport {
 }
 ```
 
-* `type`: the type of the data source: *rdb*, *csv* or *xml*
+* `type`: the type of the data source: *rdb*, *csv*, *json* or *xml*
 * `source`: the data source to be mapped. For example a filename or tablename
 * `referenceables`: the referenceable elements within the data source. For example the columns of a table or CSV file
 
