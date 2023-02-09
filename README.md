@@ -52,7 +52,7 @@ The plugin will not work properly with older Eclipse releases! Please install th
 
 ### Using Visual Studio Code
 
-1. Download the extension: <https://download.zazukoians.org/expressive-rdf-mapper/expressive-rdf-mapper-1.3.0.vsix>.
+1. Download the extension: <https://download.zazukoians.org/expressive-rdf-mapper/expressive-rdf-mapper-1.3.0-20230209-210730.vsix>.
 1. Open Visual Studio Code and navigate to the "Extensions" (select View > Extensions from the menu).
 1. Top-right corner of the "Extensions" pane, use the `...` button and choose "Install from VSIX…".
 1. Select the `.vsix` file you downloaded, click *Install*.
