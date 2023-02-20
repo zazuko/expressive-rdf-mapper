@@ -1,6 +1,6 @@
 # Expressive RDF Mapper (XRM)
 
-Expressive RDF Mapper (XRM) is an RDF mapping language for humans. It greatly facilitates the mapping of non-RDF resources to RDF.
+Expressive RDF Mapper (XRM) is an RDF mapping language for humans. It greatly facilitates the mapping of non-RDF resources to RDF, offering several features such as autocomplete, code lookup, and a type-safe experience.
 
 XRM is available as an Eclipse and Visual Studio Code Plugin.
 
