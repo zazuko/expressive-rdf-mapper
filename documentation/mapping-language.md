@@ -10,7 +10,7 @@ The elements of the language belong either to the source, the target or the mapp
 
 | source | target | mapping |
 | -------- | -------- | -------- |
-| `logical-source`, `source-group`, `dialect`, `xml-namespace-extension`     | `vocabulary`, `language-tags`     | `output`, `map`, `template`     |
+| `logical-source`, `source-group`, `dialect`, `xml-namespace-extension`, `iterator` | `vocabulary`, `language-tags`     | `output`, `map`, `template`     |
 
 
 ## Source
@@ -24,6 +24,7 @@ The elements of the language belong either to the source, the target or the mapp
 logical-source airport {
 	type csv
 	source "http://www.example.com/Airport.csv"
+	iterator "$."
 	
 	referenceables
 		id
@@ -35,6 +36,7 @@ logical-source airport {
 
 * `type`: the type of the data source: *rdb*, *csv*, *json* or *xml*
 * `source`: the data source to be mapped. For example a filename or tablename
+* `iterator`: the logical iterator defines the iteration loop used to map the data of the input source (optional in case of CSV, required for JSON and XML)
 * `referenceables`: the referenceable elements within the data source. For example the columns of a table or CSV file
 
 A `logical-source` can stand on its own or be contained in a `source-group`
