@@ -90,5 +90,5 @@ The included [End-User License Agreement](EULA.md) covers personal, non-commerci
 
 For commercial use, including commercial support, consult our [product page](https://zazuko.com/products/expressive-rdf-mapper/) at zazuko.com for more details.
 
-Please report issues and feature requests on Github. If you have other questions please post a message in the [RDF.community discussion forum](https://github.com/rdf-community/discussions/discussions).
+Please report issues and feature requests on the [issue-tracker](https://github.com/zazuko/xrm/issues). If you have other questions please post a message in the [RDF.community discussion forum](https://github.com/rdf-community/discussions/discussions).
 
