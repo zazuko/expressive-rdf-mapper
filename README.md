@@ -7,7 +7,7 @@ XRM is available as an Eclipse and Visual Studio Code Plugin.
 Expressive RDF Mapper allows you to express data mappings to RDF in a friendly domain specific language (DSL) and generates output in
 [R2RML](http://www.w3.org/TR/r2rml/), [RML](https://rml.io/specs/rml/), [CARML](https://github.com/carml/carml) and [CSV on the Web](https://w3c.github.io/csvw/primer/) format.
 
-Expressive RDF Mapper is a commercial product, see the [End-User License Agreement](EULA.md) and our [product page](https://zazuko.com/products/expressive-rdf-mapper/) at zazuko.com for more details.
+Expressive RDF Mapper is free software, see the [MIT License](LICENSE.txt) and our [product page](https://zazuko.com/products/expressive-rdf-mapper/) at zazuko.com for more details.
 
 ```
 output r2rml
@@ -34,8 +34,8 @@ We've tested the plugin with:
 
 ### Using Eclipse
 
-1) Download and install Eclipse "Eclipse IDE 2022-03" (or newer): https://www.eclipse.org/downloads/packages/
-   * Recommended package: *Eclipse IDE for Java Developers*
+1) Download and install Eclipse "Eclipse IDE 2023-12" (or newer): https://www.eclipse.org/downloads/packages/
+   * Package: *Eclipse IDE for Java and DSL Developers*
    * Hint: The Eclipse Installer now also includes a JRE. A Java 11 or newer JRE/JDK is required.
 
 2) Start Eclipse and install the extension:
@@ -52,7 +52,7 @@ The plugin will not work properly with older Eclipse releases! Please install th
 
 ### Using Visual Studio Code
 
-1. Download the extension: <https://download.zazukoians.org/expressive-rdf-mapper/expressive-rdf-mapper-1.3.0-20230209-2148.vsix>.
+1. Download the extension: <https://download.zazukoians.org/expressive-rdf-mapper/expressive-rdf-mapper-1.5.0.vsix>.
 1. Open Visual Studio Code and navigate to the "Extensions" (select View > Extensions from the menu).
 1. Top-right corner of the "Extensions" pane, use the `...` button and choose "Install from VSIX…".
 1. Select the `.vsix` file you downloaded, click *Install*.
@@ -64,13 +64,10 @@ Details of editor issues are shown in the problems view. Use `View > Problems (C
 ## Mapping examples
 
 For complete examples, have a look at the projects in the [mapping-examples](mapping-examples) folder.
-Once you installed the extension in Eclipse a good way to start is to start playing with them.
+Once you installed the extension a good way to start is to start playing with them.
 
-1. Clone this repository.
-2. In Eclipse, click _File > Import_.
-3. In the Import wizard: Expand General and then click _Projects from Folder or Archive_ . Click Next . Click _Directory_ and select the cloned repository. Click Finish to add it to your Eclipse.
-4. Open one of the samples like `employee-mapping` and try to modify the current mapping.
-5. Xtext constantly watches the `.xrm` files in your Eclipse project and validates the syntax (ie. *on save*). When the syntax is valid, it automatically writes the generated mapping file(s) to `./src-gen`.
+1. Open one of the samples like `employee-mapping` and try to modify the current mapping.
+2. Xtext constantly watches the `.xrm` files in your project and validates the syntax (ie. *on save*). When the syntax is valid, it automatically writes the generated mapping file(s) to `./src-gen`.
 
 ## Tutorials & Documentation
 
@@ -86,9 +83,8 @@ Once you installed the extension in Eclipse a good way to start is to start play
 
 ## License and Support
 
-The included [End-User License Agreement](EULA.md) covers personal, non-commercial use.
+Expressive RDF Mapper is free software, released under the [MIT License](LICENSE.txt)
 
-For commercial use, including commercial support, consult our [product page](https://zazuko.com/products/expressive-rdf-mapper/) at zazuko.com for more details.
+For commercial support, consult our [product page](https://zazuko.com/products/expressive-rdf-mapper/) at zazuko.com for more details.
 
-Please report issues and feature requests on the [issue-tracker](https://github.com/zazuko/xrm/issues). If you have other questions please post a message in the [RDF.community discussion forum](https://github.com/rdf-community/discussions/discussions).
-
+Please report issues and feature requests on Github. If you have other questions please post a message in the [RDF.community discussion forum](https://discuss.rdf.community/).

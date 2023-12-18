@@ -1,5 +1,17 @@
 # Changelog of Expressive RDF Mapper (XRM)
 
+
+## Version 1.5.0 (2023-12-18)
+
+* Fix: empty mapping files crashing the language-server in vscode #147
+* Fix: undefined prefixes from VocabularyElement used as constant #151
+* (R2)RML mapping: Support `rr:parentTriplesMap` with `rr:joinCondition` #31
+
+## Version 1.4.0 (2023-12-06)
+
+* Lifecycle: Upgrade to xtext 2.33
+
+
 ## Version 1.3.0 (2023-02-09)
 
 * JSON mapping: Support `ql:JSONPath` in (CA)RML output
