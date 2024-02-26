@@ -62,6 +62,46 @@ logical-source airport {
 In this example the column name `Spec. Row` from the CSV is escaped and will be referenced using `specRow` instead.
 
 
+#### XPath and JSONPath usage
+
+XPath expressions are used to refer to the elements of an XML data source.
+
+JSONPath expressions are used to refer to the elements of a JSON data source.
+
+In XRM, these types of expressions are found in two places:
+- `iterator`: The repetition pattern that emits elements/objects for mapping
+- `referenceables`: The reference for extracting a data value for a given logical iteration
+
+
+The following sample snippet shows a `logical-source` definition for a JSON data source, using some JSONPath expressions:
+
+```
+logical-source personen_desc {
+  type json
+  source "stdin"
+  iterator "$..[?(@.thesaurus == 'Personenbegriffe')]"
+
+  referenceables
+    identifier
+    title
+    description
+    recordId "records[*].id"
+    descriptorId "related_descriptor_set[*].to_descriptor.identifier"
+}
+```
+
+Please note the aliasing of the two expression for the `recordId` and `descriptorId` referenceables.
+
+For a more complete JSON sample, have a look at:
+- https://github.com/zazuko/xrm-xml-workflow/blob/main/mappings/sources.xrm
+- https://github.com/zazuko/xrm/issues/129
+
+For a more complete XML sample, have a look at:
+- https://github.com/zazuko/xrm-xml-workflow/blob/main/mappings/sources.xrm
+- https://github.com/zazuko/expressive-rdf-mapper/blob/main/mapping-examples/characters-mapping/characters.xrm
+
+
+
 #### SQL query as source
 
 [R2RML views](https://www.w3.org/TR/r2rml/#r2rml-views) are useful in cases where differing mappings have to be applied, depending on conditions in the source data. Instead of a table name, the source is a SQL query: 
@@ -105,7 +145,7 @@ logical-source airport {
 
 ### source-group
 
-Several `logical-source`s can be grouped together. Information that is identical for the `logical-source`s within the group can be declared on group level, like their `type` or the `source`, in order to avoid repetition.
+Optionally, several `logical-source`s can be grouped together. Information that is identical for all the `logical-source`s within the group can be declared on group level, in order to avoid repetition. Like their `type` and `source`, if applicable. For CSV sources, also `null` (the missing value indicator) and `dialect` can be declared on group level. For XML sources, also `xml-namespace-extension` can be declared on group level.
 
 ```
 source-group permits {
@@ -282,7 +322,7 @@ map AirportMapping from airport {
 
 ### map
 
-A `map` describes how to translate source data from one `logical-source` into RDF triples.
+A `map` describes how to translate source data `from` one `logical-source` into RDF triples.
 
 ```
 map AirportMapping from airport {
@@ -327,6 +367,7 @@ The property value (the object of the triple):
 * Can also be `with datatype` or `with languag-tag`
 * Can be described as `template`
 * Can be a `constant` value. Either a string or a `class`, `property` or `datatype` from a `vocabulary`
+* Can be a join to another source, using `parent-map`. For details on this, see https://github.com/zazuko/xrm/issues/31#issuecomment-1853921584
 
 
 Note regarding the use of `multi-reference`: `multi-reference` was specifically added to support the CARML MultiTermMap extension in XRM. Be aware that this extension [got deprecated](https://github.com/carml/carml/issues/52#issuecomment-690999094) with CARML release v0.3.0 (2020-09-11). 
