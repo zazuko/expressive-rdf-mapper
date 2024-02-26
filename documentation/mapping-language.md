@@ -145,7 +145,11 @@ logical-source airport {
 
 ### source-group
 
-Optionally, several `logical-source`s can be grouped together. Information that is identical for all the `logical-source`s within the group can be declared on group level, in order to avoid repetition. Like their `type` and `source`, if applicable. For CSV sources, also `null` (the missing value indicator) and `dialect` can be declared on group level. For XML sources, also `xml-namespace-extension` can be declared on group level.
+Optionally, several `logical-source`s can be grouped together. Information that is identical for all the `logical-source`s within the group can be declared on group level, in order to avoid repetition. Like their `type` and `source`, if applicable.
+
+For CSV sources, also `null` (the missing value indicator) and `dialect` can be declared on group level.
+
+For XML sources and with *carml* output, also `xml-namespace-extension` can be declared on group level.
 
 ```
 source-group permits {
