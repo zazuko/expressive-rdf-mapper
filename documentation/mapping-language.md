@@ -45,7 +45,7 @@ A `logical-source` can stand on its own or be contained in a `source-group`
 
 #### Aliasing reference names
 
-Certain characters are not allowed in the identifier of `referenceables`. In CSV we sometimes find column headers with whitespace and/or special characters. Also many [XPath and JSONPath expressions](#xpath-jsonpath-usage) contain special characters. XRM will show you errors on those lines.
+Certain characters are not allowed in the identifier of `referenceables`. In CSV we sometimes find column headers with whitespace and/or special characters. Also many [XPath and JSONPath expressions](#xpath-and-jsonpath-usage) contain special characters. XRM will show you errors on those lines.
 
 In order to handle these cases, put the reference name (or expression) in quotes and prepend it with a valid alias identifier for referencing the element inside XRM.
 
@@ -66,7 +66,7 @@ logical-source airport {
 In this example the column name `Spec. Row` from the CSV is aliased and will be referenced using the identifier `specRow` instead.
 
 
-#### XPath and JSONPath usage {#xpath-jsonpath-usage}
+#### XPath and JSONPath usage
 
 XPath expressions are used to refer to the elements of an XML data source.
 
@@ -433,10 +433,10 @@ Templates can be re-used, this is especially useful for IRI templates. See the [
 
 There may be more than one `map` for one and the same `logical-source`.
 
-For dealing with XML or JSON sources, see also the section about [XPath and JSONPath usage](#xpath-jsonpath-usage). These path expressions are defined as `referenceables` inside the `logical-source`.
+For dealing with XML or JSON sources, see also the section about [XPath and JSONPath usage](#xpath-and-jsonpath-usage). These path expressions are defined as `referenceables` inside the `logical-source`.
 
 
-### template {#template}
+### template
 
 A `template` can be declared on the top-level, outside of a `map`, and subsequently be referred to from multiple mappings.
 Doing so avoids repetition of IRI templates when multiple mappings involve the same resource.
