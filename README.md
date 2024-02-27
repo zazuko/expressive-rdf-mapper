@@ -74,6 +74,7 @@ Once you installed the extension a good way to start is to start playing with th
 * Video Tutorial [Mapping non-RDF data to a graph: Hands-on](https://youtu.be/gl2qzXmJypw)
 * Template for creating automated [CSV to RDF pipelines](https://github.com/zazuko/xrm-csvw-workflow)
 * Template for creating automated [relational database (RDB) to RDF pipelines](https://github.com/zazuko/xrm-r2rml-workflow)
+* Template for creating automated [JSON or XML to RDF pipelines](https://github.com/zazuko/xrm-xml-workflow)
 * Try out mapping and transforming a MySQL database into a graph using our [Gitpod sample workspace](https://github.com/zazuko/gitpod-example) (in the cloud, without requiring a local toolchain installation)
 
 * [The Mapping Language](documentation/mapping-language.md) describes the elements of the language.
