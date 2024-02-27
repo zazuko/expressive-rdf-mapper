@@ -377,6 +377,37 @@ The property value (the object of the triple):
 Note regarding the use of `multi-reference`: `multi-reference` was specifically added to support the CARML MultiTermMap extension in XRM. Be aware that this extension [got deprecated](https://github.com/carml/carml/issues/52#issuecomment-690999094) with CARML release v0.3.0 (2020-09-11). 
 
 
+The following block shows some common combinations of input data value(s), XRM object map and resulting RDF term: (examples validated with JSON input, carml output and carml processor)
+
+```
+// foo = hello
+from foo ;  // => "hello"^^xsd:string
+	
+// foo = 42
+from foo with datatype xsd.integer ;  // => "42"^^xsd:integer
+
+// foo = hello
+from foo with language-tag en ;  // => "hello"@en
+	
+// foo = hello
+template "https://data.example.org/{0}" with foo ;  // => <https://data.example.org/hello>
+	
+// foo = hello, bar = world
+template "{0} {1}!" with foo bar as Literal ;  // => "hello world!"^^xsd:string
+	
+// foo = hello, bar = world
+template "https://data.example.org/{0}/{1}" with foo bar ;  // => <https://data.example.org/hello/world>
+	
+// --------------------------------------------
+
+// foo = https://www.wikidata.org/wiki/Q1424987
+from foo with datatype xsd.anyURI ;  // => "https://www.wikidata.org/wiki/Q1424987"^^xsd:anyURI
+	
+// foo = http://www.wikidata.org/entity/Q31465098
+from foo as IRI ;  // => <http://www.wikidata.org/entity/Q31465098>
+```
+
+
 #### map: template
 
 A `template` can have multiple variables:
