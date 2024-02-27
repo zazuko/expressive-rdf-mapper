@@ -43,9 +43,11 @@ logical-source airport {
 
 A `logical-source` can stand on its own or be contained in a `source-group`
 
-#### Escaping special chars
+#### Aliasing reference names
 
-In CSV we often find weird column headers with whitespace and/or special chars. XRM will show you errors on those lines so you will need to escape them. You can escape them by adding quotes around the string. To be able to reference it properly, you need to give a valid alias that will be used instead.
+Certain characters are not allowed in the identifier of `referenceables`. In CSV we sometimes find column headers with whitespace and/or special characters. Also many [XPath and JSONPath expressions](#xpath-jsonpath-usage) contain special characters. XRM will show you errors on those lines.
+
+In order to handle these cases, put the reference name (or expression) in quotes and prepend it with a valid alias identifier for referencing the element inside XRM.
 
 ```
 logical-source airport {
@@ -61,7 +63,7 @@ logical-source airport {
 }
 ```
 
-In this example the column name `Spec. Row` from the CSV is escaped and will be referenced using `specRow` instead.
+In this example the column name `Spec. Row` from the CSV is aliased and will be referenced using the identifier `specRow` instead.
 
 
 #### XPath and JSONPath usage {#xpath-jsonpath-usage}
@@ -273,7 +275,7 @@ The following is an example for refering to the class *schema.GovernmentOrganiza
 
 #### Aliasing elements that have special characters in their name
 
-Certain characters are not allowed in the identifier of `classes`, `properties` and `datatypes`. To handle these cases, add quotes around the name and prepend it with a valid alias for referencing the element inside XRM.
+Certain characters are not allowed in the identifier of `classes`, `properties` and `datatypes`. To handle these cases, put the name in quotes and prepend it with a valid alias identifier for referencing the element inside XRM.
 
 ```
 vocabulary ric {
