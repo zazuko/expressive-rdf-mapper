@@ -12,6 +12,8 @@ The elements of the language belong either to the source, the target or the mapp
 | -------- | -------- | -------- |
 | `logical-source`, `source-group`, `dialect`, `xml-namespace-extension`, `iterator` | `vocabulary`, `language-tags`     | `output`, `map`, `template`     |
 
+XRM is [grammar driven](https://eclipse.dev/Xtext/documentation/301_grammarlanguage.html), built with Xtext. Have a look at the [XRM language definition](https://github.com/zazuko/xrm/blob/main/com.zazuko.rdfmapping.dsl.parent/com.zazuko.rdfmapping.dsl/src/com/zazuko/rdfmapping/dsl/RdfMapping.xtext) if you are interested to know the details of the syntax.
+
 
 ## Source
 
@@ -62,7 +64,7 @@ logical-source airport {
 In this example the column name `Spec. Row` from the CSV is escaped and will be referenced using `specRow` instead.
 
 
-#### XPath and JSONPath usage
+#### XPath and JSONPath usage {#xpath-jsonpath-usage}
 
 XPath expressions are used to refer to the elements of an XML data source.
 
@@ -348,7 +350,7 @@ map AirportMapping from airport {
 
 
 * `subject`: (mandatory) the subject IRI described as `template`
-* `graphs`: (optional) one or more IRIs of the target [named graph](https://rml.io/specs/rml/#named-graph)
+* `graphs`: (optional) one or more IRIs of the target [named graph](https://rml.io/specs/rml/#named-graph). For details on this, see https://github.com/zazuko/xrm/issues/135#issuecomment-1840964288
 * `types`: (optional) one or more `classes` from a `vocabulary`
 * `properties`: (optional) one or more `properties` from a `vocabulary` and the source for their value
 
@@ -422,16 +424,22 @@ properties
 	ex.foobaz template "{0}-{1}" with FOO BAZ as Literal;
 ```
 
+Templates can be re-used, this is especially useful for IRI templates. See the [template](#template) section below.
+
 
 #### map: other hints
 
 There may be more than one `map` for one and the same `logical-source`.
 
+For dealing with XML or JSON sources, see also the section about [XPath and JSONPath usage](#xpath-jsonpath-usage). These path expressions are defined as `referenceables` inside the `logical-source`.
 
-### template
+
+### template {#template}
 
 A `template` can be declared on the top-level, outside of a `map`, and subsequently be referred to from multiple mappings.
 Doing so avoids repetition of IRI templates when multiple mappings involve the same resource.
+
+In larger projects, we found it to be practical to have a dedicated file for all the templates. Having all IRI templates defined in one place makes it easier to refactor them.
 
 ```
 template airportIri "http://airport.example.com/{0}"
@@ -459,6 +467,9 @@ map AirlineAtAirport from airlineairport {
 		ex.airportServed template airportIri with airportId;
 }
 ```
+
+In this example the `airportIri` template is used three times, twice for the subject map and once to create a link.
+
 
 ## Special stuff
 
