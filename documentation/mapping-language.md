@@ -409,6 +409,26 @@ from foo with datatype xsd.anyURI ;  // => "https://www.wikidata.org/wiki/Q14249
 	
 // foo = http://www.wikidata.org/entity/Q31465098
 from foo as IRI ;  // => <http://www.wikidata.org/entity/Q31465098>
+
+// foo = http://www.wikidata.org/entity/Q31465098
+template "https://data.example.org/?x={0}" with foo ;  // => <https://data.example.org/?x=http%3A%2F%2Fwww.wikidata.org%2Fentity%2FQ31465098>
+
+// foo = http://www.wikidata.org/entity/Q31465098
+template "The URL is {0}" with foo as Literal ;  // => "The URL is http://www.wikidata.org/entity/Q31465098"^^xsd:string
+
+// foo = http://www.wikidata.org/entity/Q31465098
+template "{0}" with foo as BlankNode ;  // => _:b2_httpwwwwikidataorgentityQ31465098
+
+// --------------------------------------------
+
+// foo = a/b c:d
+from foo ;  // => "a/b c:d"^^xsd:string
+
+// foo = a/b c:d
+from foo as BlankNode ;  // => _:b2_abcd
+
+// foo = a/b c:d
+template "https://data.example.org/?x={0}" with foo ;  // => <https://data.example.org/?x=a%2Fb%20c%3Ad>
 ```
 
 
