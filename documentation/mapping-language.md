@@ -143,6 +143,7 @@ logical-source airport {
 		stop
 		latitude
 		longitude
+                wikidataIri
 }
 ```
 
@@ -346,6 +347,7 @@ map AirportMapping from airport {
 		transit.route from stop with datatype xsd.integer;
 		wgs84_pos.lat from latitude;
 		wgs84_pos.long from longitude;
+                schema.sameAs from wikidataIri as IRI;
 }
 ```
 
