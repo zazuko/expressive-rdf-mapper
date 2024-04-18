@@ -1,0 +1,36 @@
+PREFIX rr: <http://www.w3.org/ns/r2rml#>
+PREFIX rml: <http://semweb.mmlab.be/ns/rml#>
+PREFIX ql: <http://semweb.mmlab.be/ns/ql#>
+PREFIX carml: <http://carml.taxonic.com/carml/>
+PREFIX eli: <http://data.europa.eu/eli/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<#LegalResource>
+	a rr:TriplesMap;
+	
+	rml:logicalSource [
+		rml:source [
+			a carml:Stream;
+			carml:streamName "stdin";
+			carml:declaresNamespace [
+				carml:namespacePrefix "akn";
+				carml:namespaceName "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+			]
+		];
+		rml:referenceFormulation ql:XPath;
+		rml:iterator "/akn:akomaNtoso/akn:act/akn:meta/akn:identification/akn:FRBRWork"
+	];
+	
+	rr:subjectMap [
+		rml:reference "concat('http://zrh.ch', akn:FRBRuri/@value)";
+		rr:class eli:LegalResource
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate eli:date_document;
+		rr:objectMap [
+			rml:reference "tokenize(akn:FRBRuri/@value, '/')[5]";
+			rr:datatype xsd:date
+		]
+	].
+	

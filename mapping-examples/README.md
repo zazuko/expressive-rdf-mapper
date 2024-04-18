@@ -19,6 +19,13 @@ The *src-gen* folder inside the projects contains the generated mapping file(s).
 * mapping data from a single table of a relational database
 * output R2ML
 
+## legalresource-mapping
+
+* mapping data from an XML file
+* output [CARML](https://github.com/carml/carml)
+* using XPath expressions to reference and pre-process data elements
+* using CARMLs [XML namespace extension](https://github.com/carml/carml#xml-namespace-extension)
+
 ## permit-mapping
 
 * mapping data from multiple tables of a relational database

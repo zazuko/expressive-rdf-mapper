@@ -1,11 +1,18 @@
 # Changelog of Expressive RDF Mapper (XRM)
 
+## Version 1.6.0 (2024-04-17)
+
+* (R2)RML mapping: Support subject IRIs from reference (`rml:reference`, `rr:column`)  #153
+* (R2)RML mapping: Support constant subject IRIs (`rr:constant`)  #89
+* (R2)RML mapping: Support graph IRIs from reference (`rml:reference`, `rr:column`)
+
 
 ## Version 1.5.0 (2023-12-18)
 
 * Fix: empty mapping files crashing the language-server in vscode #147
 * Fix: undefined prefixes from VocabularyElement used as constant #151
 * (R2)RML mapping: Support `rr:parentTriplesMap` with `rr:joinCondition` #31
+
 
 ## Version 1.4.0 (2023-12-06)
 

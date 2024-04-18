@@ -1,0 +1,12 @@
+// based on https://github.com/zazuko/xrm/issues/153
+output carml
+
+map LegalResource from Work {
+	subject from legalResourceIri;
+
+	types
+		eli.LegalResource
+
+	properties
+		eli.date_document from docdate with datatype xsd.date;
+}

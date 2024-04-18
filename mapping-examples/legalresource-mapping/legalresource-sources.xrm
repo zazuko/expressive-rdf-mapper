@@ -1,0 +1,19 @@
+logical-source Work {
+	type xml
+	source "stdin"
+	xml-namespace-extension akomaNtoso
+	iterator "/akn:akomaNtoso/akn:act/akn:meta/akn:identification/akn:FRBRWork"
+
+	// XPath expressions used to create the subject-IRI and to grab a token from a URI path
+	// XPath expressions are put in quotes and prefixed with an alias
+	referenceables
+		legalResourceIri "concat('http://zrh.ch', akn:FRBRuri/@value)"
+		docdate "tokenize(akn:FRBRuri/@value, '/')[5]"
+}
+
+// When working with XML documents, it is often necessary to specify namespaces in order to identify a node's qualified name in XPath expressions.
+// CARML includes a XML namespace extension to convey these namespaces to the processing engine.
+// https://github.com/carml/carml#xml-namespace-extension
+xml-namespace-extension akomaNtoso {
+	prefix "akn" "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+}

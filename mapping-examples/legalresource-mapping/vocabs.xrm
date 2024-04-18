@@ -1,0 +1,18 @@
+vocabulary xsd {
+	prefix "xsd" "http://www.w3.org/2001/XMLSchema#"
+
+	datatypes
+		anyURI
+		date
+}
+
+vocabulary eli {
+	prefix "eli" "http://data.europa.eu/eli/ontology#"
+
+	classes
+		LegalResource
+
+	properties
+		date_document
+}
+
