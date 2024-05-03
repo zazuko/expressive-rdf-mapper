@@ -7,7 +7,7 @@ XRM is available as an Eclipse and Visual Studio Code Plugin.
 Expressive RDF Mapper allows you to express data mappings to RDF in a friendly domain specific language (DSL) and generates output in
 [R2RML](http://www.w3.org/TR/r2rml/), [RML](https://rml.io/specs/rml/), [CARML](https://github.com/carml/carml) and [CSV on the Web](https://w3c.github.io/csvw/primer/) format.
 
-Expressive RDF Mapper is free software, see the [MIT License](LICENSE.txt) and our [product page](https://zazuko.com/products/expressive-rdf-mapper/) at zazuko.com for more details.
+Expressive RDF Mapper is free software, see the [MIT License](LICENSE.txt) and our [product page](https://zazuko.com/products/expressive-rdf-mapper/) at zazuko.com for more details. The software is available under the MIT license, source code can be found [here](https://github.com/zazuko/xrm). We offer commercial support for it, get in [contact](mailto:info@zazuko.com?subject=XRM) with us.
 
 ```
 output r2rml
