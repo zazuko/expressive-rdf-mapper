@@ -289,6 +289,14 @@ vocabulary ric {
 
 In this example the property `characteristic-Physical` is aliased and will be referenced using the identifier `characteristicPhysical` instead.
 
+Note that also identifiers starting with a number, or entirely made up of numbers will need aliasing, for example:
+
+```
+class
+	_1018 "1018"
+```
+
+In this example the class `1018` is aliased and will be referenced using the identifier `_1018` instead.
 
 ### language-tags
 
