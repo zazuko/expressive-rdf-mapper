@@ -31,6 +31,8 @@ We've tested the plugin with:
 
 * OpenJDK 11
 * OpenJDK 17
+* OpenJDK 21
+* OpenJDK 25
 
 ### Using Eclipse
 
@@ -72,7 +74,8 @@ Once you installed the extension a good way to start is to start playing with th
 ## Tutorials & Documentation
 
 * Video Tutorial [Mapping non-RDF data to a graph: Hands-on](https://youtu.be/gl2qzXmJypw)
-* Template for creating automated [CSV to RDF pipelines](https://github.com/zazuko/xrm-csvw-workflow)
+* Template for creating automated [CSV to RDF pipelines](https://github.com/zazuko/xrm-csv-workflow), using R2RML, DuckDB and Ontop 
+* Template for creating automated [CSV to RDF pipelines](https://github.com/zazuko/xrm-csvw-workflow), using CSV on the Web
 * Template for creating automated [relational database (RDB) to RDF pipelines](https://github.com/zazuko/xrm-r2rml-workflow)
 * Template for creating automated [JSON or XML to RDF pipelines](https://github.com/zazuko/xrm-xml-workflow)
 * Try out mapping and transforming a MySQL database into a graph using our [Gitpod sample workspace](https://github.com/zazuko/gitpod-example) (in the cloud, without requiring a local toolchain installation)
